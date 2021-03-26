@@ -77,3 +77,6 @@ init();
 
 // TODO: Sender
 // page for sender: show a textarea and a send button
+
+// TODO: Requester
+// - toggle between fa-eye-slash and fa-eye classes on #response_show

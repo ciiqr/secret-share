@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/marx/3.0.7/marx.min.css" integrity="sha512-gIfBOM+mjygWMgT6b/dqLds7xc9UxAoN+04jxTdg7oLrqJC8dGdbgGU4ddwPDxOeluhkm+0fsIpFLKwrRBxmGQ==" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
     <link rel="stylesheet" type="text/css" href="secret-share.css">
-    <!-- <link rel="stylesheet" type="text/css" href="secret-share-grid.css"> -->
 
     <script src="https://cdn.jsdelivr.net/npm/qrcode-svg@1.1.0/lib/qrcode.min.js"></script>
     <script type="text/javascript" src="secret-share.js"></script>
@@ -19,16 +18,18 @@
 <body>
     <div class="layout">
         <div class="content">
-            <div class="qrcode" id="qrcode"></div>
-            <!-- TODO: Change buttons to align to the right of their associated fields -->
-            <button class="fa fa-copy url_copy"></button>
-            <div class="url_wrapper">
-                <input class="url" id="url" type="text" readonly="readonly"/>
+            <div class="qrcode" id="qrcode">
+                <!-- start with a blank square svg so the page doesn't resize when the qrcode loads -->
+                <!-- only required because some (most) browsers don't support css aspect-ratio -->
+                <svg viewBox="0 0 1 1"/>
             </div>
+
+            <input class="url" id="url" type="text" readonly="readonly"/>
+            <button class="fa fa-copy url_copy"></button>
+
             <textarea class="response" id="response" readonly="readonly"></textarea>
+            <button class="fa fa-eye-slash response_show" id="response_show"></button>
             <button class="fa fa-copy response_copy"></button>
-            <!-- TODO: toggle fa-eye-slash/fa-eye -->
-            <button class="fa fa-eye-slash"></button>
         </div>
     </div>
 </body>
