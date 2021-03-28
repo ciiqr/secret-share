@@ -1,0 +1,16 @@
+version: '3.6'
+services:
+  proxy:
+    image: pentible/basic-nginx
+    environment:
+      SERVER_CONFIG: |
+        location / {
+          proxy_pass http://client;
+        }
+    ports:
+      - '80:80'
+  client:
+    build:
+      context: ./client
+    volumes:
+      - './client:/var/www:delegated'
