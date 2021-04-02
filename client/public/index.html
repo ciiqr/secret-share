@@ -1,36 +1,24 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <title>React App</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
 
-    <title>secret-share</title>
-    <link rel="icon" href="favicon.png">
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/marx/3.0.7/marx.min.css" integrity="sha512-gIfBOM+mjygWMgT6b/dqLds7xc9UxAoN+04jxTdg7oLrqJC8dGdbgGU4ddwPDxOeluhkm+0fsIpFLKwrRBxmGQ==" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
-    <link rel="stylesheet" type="text/css" href="secret-share.css">
-
-    <script src="https://cdn.jsdelivr.net/npm/qrcode-svg@1.1.0/lib/qrcode.min.js"></script>
-    <script type="text/javascript" src="secret-share.js"></script>
-</head>
-<body>
-    <div class="layout">
-        <div class="content">
-            <div class="qrcode" id="qrcode">
-                <!-- start with a blank square svg so the page doesn't resize when the qrcode loads -->
-                <!-- only required because some (most) browsers don't support css aspect-ratio -->
-                <svg viewBox="0 0 1 1"/>
-            </div>
-
-            <input class="url" id="url" type="text" readonly="readonly"/>
-            <button class="fa fa-copy url_copy"></button>
-
-            <textarea class="response" id="response" readonly="readonly"></textarea>
-            <button class="fa fa-eye-slash response_show" id="response_show"></button>
-            <button class="fa fa-copy response_copy"></button>
-        </div>
-    </div>
-</body>
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  </body>
 </html>
