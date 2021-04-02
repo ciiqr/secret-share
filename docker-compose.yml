@@ -6,9 +6,25 @@ services:
       SERVER_CONFIG: |
         location / {
           proxy_pass http://client;
+
+          # TODO: when relevant
+          # # websocket support for react devtools
+          # proxy_set_header Upgrade $$http_upgrade;
+          # proxy_set_header Connection "Upgrade";
+        }
+
+        location /api {
+          proxy_pass http://server:8080;
         }
     ports:
       - '80:80'
+  server:
+    build:
+      context: ./server
+    # environment:
+    #   SERVER_BASE_PATH: /api
+    volumes:
+      - './server:/var/task:delegated'
   client:
     build:
       context: ./client
