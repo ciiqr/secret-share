@@ -1,0 +1,18 @@
+{
+    "name": "template-typescript",
+    "version": "1.0.0",
+    "private": true,
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "docker-compose up -d --build",
+        "restart": "docker-compose down; npm run start",
+        "logs": "docker-compose logs -f server client",
+        "debug:server": "npm run debug -C server",
+        "debug:client": "npm run debug -C client",
+        "postinstall": "npm install -C client && npm install -C server",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC"
+}
