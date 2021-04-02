@@ -11,6 +11,7 @@
     https://eslint.org/docs/rules/
     ? https://palantir.github.io/tslint/usage/configuration/
 - static file & nginx only frontend image (probs just separate dockerfile for the frontend in general)
+? ts type packages move to dev?
 
 ## Steps used to create template
 - $ npm init
