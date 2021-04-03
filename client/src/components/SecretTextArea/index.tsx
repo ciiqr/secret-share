@@ -10,24 +10,33 @@ const StyledTextArea = styled.textarea`
     }
 `;
 
+const TallButton = styled.button`
+    height: 42px;
+`;
+
+const WideButton = styled(TallButton)`
+    width: 54px;
+`;
+
+const FlexRowSpaceBetween = styled.div`
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+`;
+
 const ViewButton = ({ visible, onClick }: { visible: boolean, onClick: (a: object) => void }) => (
     <WideButton
         onClick={onClick}
         className={`fa ${visible ? 'fa-eye-slash' : 'fa-eye'}`}
     />
 );
-const ResponseCopyButton = () => (<TallButton className="fa fa-copy" />);
-const TallButton = styled.button`
-    height: 42px;
-`;
-const WideButton = styled(TallButton)`
-    width: 54px;
-`;
-const FlexRowSpaceBetween = styled.div`
-    flex-direction: row;
-    display: flex;
-    justify-content: space-between;
-`;
+
+const CopyButton = ({ value }: { value: string }) => (
+    <TallButton
+        className="fa fa-copy"
+        onClick={() => navigator.clipboard.writeText(value)}
+    />
+);
 
 const ObscurableTextArea = ({ value, visible }: { value: string, visible: boolean }) => (
     <StyledTextArea readOnly value ={visible ? value : "***"} />
@@ -44,7 +53,7 @@ const SecretTextArea = ({ value }: { value: string }) => {
                     visible={secretVisible}
                     onClick={event => setSecretVisible(!secretVisible)}
                 />
-                <ResponseCopyButton />
+                <CopyButton value={value} />
             </FlexRowSpaceBetween>
         </Fragment>
     );
