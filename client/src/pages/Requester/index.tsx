@@ -1,11 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { QRCode } from 'react-qr-svg';
-
-const StyledTextArea = styled.textarea`
-    height: 200px;
-    resize: none;
-`;
+import SecretTextArea from '../../components/SecretTextArea';
 
 const QrCode = ({ url }: { url: string }) => {
     return (
@@ -17,10 +13,7 @@ const QrCode = ({ url }: { url: string }) => {
 };
 
 const UrlField = () => (<input readOnly type='text' value='hi im a url' />);
-const ResponseTextArea = () => (<StyledTextArea readOnly>hi im a StyledTextArea</StyledTextArea>);
 const UrlCopyButton = () => (<TallButton className="fa fa-copy" />);
-const ViewButton = () => (<TallButton className="fa fa-eye-slash" />);
-const ResponseCopyButton = () => (<TallButton className="fa fa-copy" />);
 
 const TallButton = styled.button`
     height: 42px;
@@ -49,12 +42,6 @@ const FlexRow = styled.div`
     gap: 4px;
 `;
 
-const FlexRowSpaceBetween = styled.div`
-    flex-direction: row;
-    display: flex;
-    justify-content: space-between;
-`;
-
 export default () => {
     return (
         <Layout>
@@ -64,11 +51,7 @@ export default () => {
                     <UrlField />
                     <UrlCopyButton />
                 </FlexRow>
-                <ResponseTextArea />
-                <FlexRowSpaceBetween>
-                    <ViewButton />
-                    <ResponseCopyButton />
-                </FlexRowSpaceBetween>
+                <SecretTextArea value="a secret" />
             </Box>
         </Layout>
     );
