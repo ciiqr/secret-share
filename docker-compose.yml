@@ -5,7 +5,7 @@ services:
     environment:
       SERVER_CONFIG: |
         location / {
-          proxy_pass http://client:3000;
+          proxy_pass http://client;
 
           # websocket support for react devtools
           proxy_set_header Upgrade $$http_upgrade;
@@ -13,26 +13,24 @@ services:
         }
 
         location /api {
-          proxy_pass http://server:8100;
+          proxy_pass http://server;
         }
     ports:
       - '80:80'
   server:
     build:
-      context: .
+      context: server
       target: development
-    command: ["npm", "run", "debug:server"]
     environment:
       SERVER_BASE_PATH: /api
     ports:
       - '9229:9229' # debugging port
     volumes:
-      - './server/src:/var/build/server/src:delegated'
+      - './server/src:/var/app/src:delegated'
   client:
     build:
-      context: .
+      context: client
       target: development
-    command: ["npm", "run", "debug:client"]
     volumes:
-      - './client/src:/var/build/client/src:delegated'
-      - './client/public:/var/build/client/public:delegated'
+      - './client/src:/var/app/src:delegated'
+      - './client/public:/var/app/public:delegated'
