@@ -5,11 +5,9 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "start": "docker-compose up -d --build",
-        "restart": "docker-compose down; npm run start",
+        "start": "docker-compose up -d --build --remove-orphans",
         "logs": "docker-compose logs -f server client",
-        "debug:server": "npm run debug -C server",
-        "debug:client": "npm run debug -C client",
+        "debug": "npm start && npm run logs",
         "postinstall": "npm install -C client && npm install -C server",
         "test": "echo \"Error: no test specified\" && exit 1"
     },

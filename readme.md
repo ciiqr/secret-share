@@ -1,9 +1,6 @@
 # template-typescript
 
 ## TODO
-~ docker-compose
-~ hot reloading
-~ typescript
 - ? babel
 - style checking/fixing
 - step through debugging from vscode
@@ -12,7 +9,3 @@
     ? https://palantir.github.io/tslint/usage/configuration/
 - static file & nginx only frontend image (probs just separate dockerfile for the frontend in general)
 ? ts type packages move to dev?
-
-## Steps used to create template
-- $ npm init
-- $ npx create-react-app frontend --typescript

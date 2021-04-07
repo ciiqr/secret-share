@@ -5,4 +5,4 @@ http.createServer(function (req, res) {
     const model = new MyClass();
     res.write(`Hello ${model.title}!`);
     res.end();
-}).listen(8100);
+}).listen(80);

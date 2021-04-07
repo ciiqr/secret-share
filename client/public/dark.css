@@ -1,4 +1,4 @@
-/* TODO: not sure the file should be here? */
+/* TODO: not sure the file should be here? def not, doesn't get minified */
 @media (prefers-color-scheme: dark) {
     /* TODO: could maybe do this more efficiently by modifying marx's scss $primary and exporting */
     body {
