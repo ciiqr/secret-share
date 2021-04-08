@@ -16,7 +16,9 @@ COPY tsconfig.json ./
 
 RUN npm install --quiet --unsafe-perm --no-progress --no-audit --only=development
 
-## All files will be volume mounted into the container
+# ie. /secret/
+ARG REACT_APP_BASE_HREF='/'
+ENV REACT_APP_BASE_HREF="$REACT_APP_BASE_HREF"
 
 ENV PORT=80
 
