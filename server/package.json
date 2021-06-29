@@ -9,13 +9,19 @@
         "predebug": "rimraf build/*",
         "debug": "tsc-watch --onSuccess 'npm start --inspect=0.0.0.0:9229' --onFailure 'echo Compilation failed!'",
         "build": "tsc -p .",
-        "test": "echo 'Error: no test specified' && exit 1"
+        "test": "jest --coverage",
+        "test:watch": "jest --coverage --watchAll",
+        "view:coverage": "jest --coverage && serve coverage/lcov-report"
     },
     "author": "",
-    "license": "ISC",
+    "license": "MIT",
     "devDependencies": {
+        "@types/jest": "^26.0.23",
         "@types/node": "^14.14.37",
+        "jest": "^27.0.5",
         "rimraf": "^3.0.2",
+        "serve": "^12.0.0",
+        "ts-jest": "^27.0.3",
         "tsc-watch": "^4.2.9",
         "typescript": "^4.2.3"
     },

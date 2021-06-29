@@ -9,8 +9,10 @@
         "logs": "docker-compose logs -f server client",
         "debug": "npm start && npm run logs",
         "postinstall": "npm install -C client && npm install -C server",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "docker-compose run server npm test && echo 'TODO: run client tests' && exit 1",
+        "test:watch": "echo 'TODO: run client and server tests at the same time via tmex package/etc' && exit 1 && docker-compose run server npm run test:watch",
+        "view:coverage": "echo 'TODO: client coverage' && exit 1 && docker-compose run -p 5000:5000 server npm run view:coverage"
     },
     "author": "",
-    "license": "ISC"
+    "license": "MIT"
 }

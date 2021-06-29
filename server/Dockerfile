@@ -12,7 +12,7 @@ RUN npm install --quiet --unsafe-perm --no-progress --no-audit --only=production
 # ---------- DEVELOPMENT ----------
 FROM prereq as development
 
-COPY tsconfig.json ./
+COPY tsconfig.json jest.config.js ./
 
 RUN npm install --quiet --unsafe-perm --no-progress --no-audit --only=development
 
