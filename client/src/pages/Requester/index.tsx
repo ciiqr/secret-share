@@ -1,19 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
 import { QRCode } from 'react-qr-svg';
-import SecretTextArea from '../../components/SecretTextArea';
+import SecretTextArea from 'components/SecretTextArea';
 
-const QrCode = ({ url }: { url: string }) => {
-    return (
-        <QRCode
-            value={url}
-            level='H'
-        />
-    );
-};
+const QrCode = ({ url }: { url: string }) => (
+    <QRCode
+        value={url}
+        level='H'
+    />
+);
 
 const UrlField = () => (<input readOnly type='text' value='hi im a url' />);
-const UrlCopyButton = () => (<TallButton className="fa fa-copy" />);
+const UrlCopyButton = () => (<TallButton className='fa fa-copy' />);
 
 const TallButton = styled.button`
     height: 42px;
@@ -42,7 +40,7 @@ const FlexRow = styled.div`
     gap: 4px;
 `;
 
-export default () => {
+export default function Requester() {
     return (
         <Layout>
             <Box>
@@ -51,7 +49,7 @@ export default () => {
                     <UrlField />
                     <UrlCopyButton />
                 </FlexRow>
-                <SecretTextArea value="a secret" />
+                <SecretTextArea value='a secret' />
             </Box>
         </Layout>
     );

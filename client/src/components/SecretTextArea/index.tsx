@@ -33,13 +33,13 @@ const ViewButton = ({ visible, onClick }: { visible: boolean, onClick: (a: objec
 
 const CopyButton = ({ value }: { value: string }) => (
     <TallButton
-        className="fa fa-copy"
+        className='fa fa-copy'
         onClick={() => navigator.clipboard.writeText(value)}
     />
 );
 
 const ObscurableTextArea = ({ value, visible }: { value: string, visible: boolean }) => (
-    <StyledTextArea readOnly value ={visible ? value : "***"} />
+    <StyledTextArea readOnly value={visible ? value : '***'} />
 );
 
 const SecretTextArea = ({ value }: { value: string }) => {

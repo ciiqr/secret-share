@@ -1,20 +1,25 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import Requester from './pages/Requester';
-import Sender from './pages/Sender';
+import Requester from 'pages/Requester';
+import Sender from 'pages/Sender';
+
+// TODO: move
+function getBasePath() {
+    const baseUrl = new URL(document.baseURI);
+    const pathname = baseUrl.pathname;
+
+    return pathname.replace(/\/$/, '');
+}
 
 // to support hosting on a subpath
-const baseUrl = new URL(document.baseURI);
-const basePath = baseUrl.pathname;
+const base = getBasePath();
 
-function App() {
+export default function App() {
     return (
         <Switch>
-            <Route path={`${basePath}`} component={Requester} exact />
-            <Route path={`${basePath}:id`} component={Sender} exact />
+            <Route path={`${base}/`} component={Requester} exact />
+            <Route path={`${base}/:id`} component={Sender} exact />
             <Route>Much wow</Route>
         </Switch>
     );
 }
-
-export default App;
