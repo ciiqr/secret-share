@@ -1,55 +1,58 @@
 import React from 'react';
 import styled from 'styled-components';
 import { QRCode } from 'react-qr-svg';
-import SecretTextArea from 'components/SecretTextArea';
+import { Button, Column, Row, ShareSecretTextArea } from 'components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCopy } from '@fortawesome/free-solid-svg-icons'
 
-const QrCode = ({ url }: { url: string }) => (
+
+// TODO: generate on page load
+const url = 'https://secret.williamvilleneuve.ca/f38t29';
+
+const QrCode = ({ className, url }: { className?: string, url: string }) => (
     <QRCode
+        className={className}
         value={url}
         level='H'
     />
 );
 
-const UrlField = () => (<input readOnly type='text' value='hi im a url' />);
-const UrlCopyButton = () => (<TallButton className='fa fa-copy' />);
+// TODO: Match Background?
+const UrlField = () => (<input readOnly type='text' value={url} />);
+const UrlCopyButton = () => (<Button><FontAwesomeIcon fixedWidth icon={faCopy} /></Button>);
 
-const TallButton = styled.button`
-    height: 42px;
-`;
+// TODO: introduce theme with standard gap values
 
-const Box = styled.div`
-    flex-direction: column;
-    max-width: 400px;
-    width: 100%;
-    display: flex;
-    gap: 4px;
-    // background-color: red;
-`;
+const Box = styled(Column)({
+    maxWidth: 400,
+    width: '100%',
+    gap: 4,
+});
 
-const Layout = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    margin: 4px;
-    // background-color: green;
-`;
+const Layout = styled(Row)({
+    justifyContent: 'space-around',
+    padding: 4,
 
-const FlexRow = styled.div`
-    flex-direction: row;
-    display: flex;
-    gap: 4px;
-`;
+    // TODO: apply theme background color to this element
+    // backgroundColor: 'blue',
+    minHeight: '100%',
+});
 
-export default function Requester() {
+
+const FlexRow = styled(Row)({
+    gap: 4,
+});
+
+export default function RequesterPage() {
     return (
         <Layout>
             <Box>
-                <QrCode url='https://secret.williamvilleneuve.ca/f38t29' />
+                <QrCode url={url} />
                 <FlexRow>
                     <UrlField />
                     <UrlCopyButton />
                 </FlexRow>
-                <SecretTextArea value='a secret' />
+                <ShareSecretTextArea value='a secret' />
             </Box>
         </Layout>
     );

@@ -1,13 +1,48 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+html, body, #root {
+    height: 100%;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* TODO: convert to a styled component theme */
+@media (prefers-color-scheme: dark) {
+    /* TODO: could maybe do this more efficiently by modifying marx's scss $primary and exporting */
+    body {
+        background-color: #36454f;
+    }
+
+    button {
+        background-color: #c9bab0;
+        color: #434343;
+    }
+
+    button:hover {
+        background-color: #b9a699;
+        border-color: #b4a092;
+        color: #434343;
+    }
+
+    button:focus {
+        box-shadow: 0 0 0 0.2rem #c9bab080;
+        -webkit-box-shadow: 0 0 0 0.2rem #c9bab080;
+    }
+
+    button:not(:disabled):active {
+        background-color: #b4a092;
+        border-color: #af998a;
+        color: #434343;
+    }
+
+    input[readonly],
+    textarea[readonly] {
+        background-color: #36454f;
+        border-color: #ffffff1f;
+        color: #c7c9d5;
+    }
+
+    input[type="text"]:focus,
+    textarea:focus {
+        background-color: #36454f;
+        border-color: #e4ddd8;
+        box-shadow: 0 0 0 0.2rem #c9bab040;
+        -webkit-box-shadow: 0 0 0 0.2rem #c9bab040;
+    }
 }

@@ -1,13 +1,13 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import Requester from 'pages/Requester';
-import Sender from 'pages/Sender';
+import RequesterPage from 'pages/Requester';
+import SenderPage from 'pages/Sender';
 
 export default function App() {
     return (
         <Switch>
-            <Route path="/" component={Requester} exact />
-            <Route path="/:id" component={Sender} exact />
+            <Route path="/" component={RequesterPage} exact />
+            <Route path="/:id" component={SenderPage} exact />
             <Route>Much wow</Route>
         </Switch>
     );

@@ -9,3 +9,4 @@
     ? https://palantir.github.io/tslint/usage/configuration/
 - static file & nginx only frontend image (probs just separate dockerfile for the frontend in general)
 ? ts type packages move to dev?
+- `<meta name="theme-color"...>` match theme (dark mode/etc)
