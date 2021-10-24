@@ -16,9 +16,10 @@ COPY tsconfig.json ./
 
 RUN npm install --quiet --unsafe-perm --no-progress --no-audit --only=development
 
-# ie. /secret/
-ARG REACT_APP_BASE_HREF='/'
-ENV REACT_APP_BASE_HREF="$REACT_APP_BASE_HREF"
+# ie. /secret
+ARG PUBLIC_URL='/'
+ENV PUBLIC_URL="$PUBLIC_URL"
+ENV WDS_SOCKET_PATH="$PUBLIC_URL"
 
 ENV PORT=80
 

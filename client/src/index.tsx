@@ -4,9 +4,12 @@ import 'index.css';
 import App from 'App';
 import * as serviceWorker from 'serviceWorker';
 import { BrowserRouter } from 'react-router-dom';
+import DomHelper from 'helpers/Dom'
+
+const base = DomHelper.getBasePath();
 
 ReactDOM.render(
-    <BrowserRouter>
+    <BrowserRouter basename={base}>
         <App />
     </BrowserRouter>,
     document.getElementById('root'),

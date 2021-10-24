@@ -42,7 +42,7 @@ const ObscurableTextArea = ({ value, visible }: { value: string, visible: boolea
     <StyledTextArea readOnly value={visible ? value : '***'} />
 );
 
-const SecretTextArea = ({ value }: { value: string }) => {
+export default function SecretTextArea({ value }: { value: string }) {
     const [secretVisible, setSecretVisible] = useState(false);
 
     return (
@@ -57,6 +57,4 @@ const SecretTextArea = ({ value }: { value: string }) => {
             </FlexRowSpaceBetween>
         </Fragment>
     );
-};
-
-export default SecretTextArea;
+}
