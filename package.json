@@ -6,12 +6,12 @@
     "main": "index.js",
     "scripts": {
         "start": "docker-compose up -d --build --remove-orphans",
-        "logs": "docker-compose logs -f server client",
+        "logs": "docker-compose logs -f server web",
         "debug": "npm start && npm run logs",
-        "postinstall": "npm install -C client && npm install -C server",
-        "test": "docker-compose run server npm test && echo 'TODO: run client tests' && exit 1",
-        "test:watch": "echo 'TODO: run client and server tests at the same time via tmex package/etc' && exit 1 && docker-compose run server npm run test:watch",
-        "view:coverage": "echo 'TODO: client coverage' && exit 1 && docker-compose run -p 5000:5000 server npm run view:coverage"
+        "postinstall": "npm install -C web && npm install -C server",
+        "test": "docker-compose run server npm test && echo 'TODO: run web tests' && exit 1",
+        "test:watch": "echo 'TODO: run web and server tests at the same time via tmex package/etc' && exit 1 && docker-compose run server npm run test:watch",
+        "view:coverage": "echo 'TODO: web coverage' && exit 1 && docker-compose run -p 5000:5000 server npm run view:coverage"
     },
     "author": "",
     "license": "MIT"

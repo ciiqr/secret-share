@@ -6,7 +6,7 @@ services:
       SERVER_CONFIG: |
         # location /secret {
         location / {
-          proxy_pass http://client;
+          proxy_pass http://web;
 
           # websocket support for react devtools
           proxy_set_header Upgrade $$http_upgrade;
@@ -29,12 +29,12 @@ services:
       - '9229:9229' # debugging port
     volumes:
       - './server/src:/var/app/src:delegated'
-  client:
+  web:
     build:
-      context: client
+      context: web
       target: development
       # args:
       #   PUBLIC_URL: /secret
     volumes:
-      - './client/src:/var/app/src:delegated'
-      - './client/public:/var/app/public:delegated'
+      - './web/src:/var/app/src:delegated'
+      - './web/public:/var/app/public:delegated'
