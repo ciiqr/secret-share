@@ -1,23 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
-import { QRCode } from 'react-qr-svg';
-import { Button, Column, Row, ShareSecretTextArea } from 'components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCopy } from '@fortawesome/free-solid-svg-icons'
+import { Button, Column, QrCode, Row, ShareSecretTextArea } from 'components';
 
-// TODO: generate on page load
-const url = 'https://secret.williamvilleneuve.ca/f38t29';
+const ReadOnlyInput = styled.input.attrs(props => ({
+    readOnly: true,
+    type: 'text',
+}))({});
 
-const QrCode = ({ className, url }: { className?: string, url: string }) => (
-    <QRCode
-        className={className}
-        value={url}
-        level='H'
-    />
-);
-
-// TODO: Match Background?
-const UrlField = () => (<input readOnly type='text' value={url} />);
 const UrlCopyButton = () => (<Button><FontAwesomeIcon fixedWidth icon={faCopy} /></Button>);
 
 // TODO: introduce theme with standard gap values
@@ -42,12 +33,15 @@ const FlexRow = styled(Row)({
 });
 
 export default function RequesterPage() {
+    // TODO: generate on page load
+    const url = 'https://secret.williamvilleneuve.ca/f38t29';
+
     return (
         <Layout>
             <Box>
-                <QrCode url={url} />
+                <QrCode value={url} />
                 <FlexRow>
-                    <UrlField />
+                    <ReadOnlyInput value={url} />
                     <UrlCopyButton />
                 </FlexRow>
                 <ShareSecretTextArea value='a secret' />

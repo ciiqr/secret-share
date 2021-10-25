@@ -40,6 +40,7 @@ const FlexColumn = styled(Column)({
     gap: 4,
 });
 
+// TODO: rename, maybe ShareSecretInput
 export default function ShareSecretTextArea({ className, value }: { className?: string, value: string }) {
     const [secretVisible, setSecretVisible] = useState(false);
 
