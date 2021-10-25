@@ -5,7 +5,6 @@ import { Button, Column, Row, ShareSecretTextArea } from 'components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCopy } from '@fortawesome/free-solid-svg-icons'
 
-
 // TODO: generate on page load
 const url = 'https://secret.williamvilleneuve.ca/f38t29';
 
@@ -38,7 +37,6 @@ const Layout = styled(Row)({
     minHeight: '100%',
 });
 
-
 const FlexRow = styled(Row)({
     gap: 4,
 });
@@ -56,4 +54,4 @@ export default function RequesterPage() {
             </Box>
         </Layout>
     );
-};
+}

@@ -1,7 +1,8 @@
 import { faCopy, faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Button, Row } from 'components';
-import React, { Fragment, useState } from 'react';
+import React, { useState } from 'react';
+import Column from 'components/Column';
 import styled from 'styled-components';
 
 const TextArea = styled.textarea({
@@ -35,12 +36,15 @@ const ObscurableTextArea = ({ value, visible }: { value: string, visible: boolea
     <TextArea readOnly value={visible ? value : '***'} />
 );
 
-export default function ShareSecretTextArea({ value }: { value: string }) {
+const FlexColumn = styled(Column)({
+    gap: 4,
+});
+
+export default function ShareSecretTextArea({ className, value }: { className?: string, value: string }) {
     const [secretVisible, setSecretVisible] = useState(false);
 
     return (
-        // TODO: likely change to Column...
-        <Fragment>
+        <FlexColumn className={className}>
             <ObscurableTextArea value={value} visible={secretVisible} />
             <FlexRowSpaceBetween>
                 <ViewButton
@@ -49,6 +53,6 @@ export default function ShareSecretTextArea({ value }: { value: string }) {
                 />
                 <CopyButton value={value} />
             </FlexRowSpaceBetween>
-        </Fragment>
+        </FlexColumn>
     );
 }
