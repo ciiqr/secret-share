@@ -1,8 +1,7 @@
-import { faCopy, faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Button, Row } from 'components';
 import React, { useState } from 'react';
-import Column from 'components/Column';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Column, Button, Row, ShareCopyButton } from 'components';
 import styled from 'styled-components';
 
 const TextArea = styled.textarea({
@@ -25,13 +24,6 @@ const ViewButton = ({ visible, onClick }: { visible: boolean, onClick: (a: objec
     </Button>
 );
 
-// TODO: separate component
-const CopyButton = ({ value }: { value: string }) => (
-    <Button onClick={() => navigator.clipboard.writeText(value)}>
-        <FontAwesomeIcon fixedWidth icon={faCopy} />
-    </Button>
-);
-
 const ObscurableTextArea = ({ value, visible }: { value: string, visible: boolean }) => (
     <TextArea readOnly value={visible ? value : '***'} />
 );
@@ -40,8 +32,7 @@ const FlexColumn = styled(Column)({
     gap: 4,
 });
 
-// TODO: rename, maybe ShareSecretInput
-export default function ShareSecretTextArea({ className, value }: { className?: string, value: string }) {
+export default function ShareSecretInput({ className, value }: { className?: string, value: string }) {
     const [secretVisible, setSecretVisible] = useState(false);
 
     return (
@@ -52,7 +43,7 @@ export default function ShareSecretTextArea({ className, value }: { className?: 
                     visible={secretVisible}
                     onClick={event => setSecretVisible(!secretVisible)}
                 />
-                <CopyButton value={value} />
+                <ShareCopyButton value={value} />
             </FlexRowSpaceBetween>
         </FlexColumn>
     );
