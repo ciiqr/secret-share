@@ -18,13 +18,17 @@ const Box = styled(Column)({
 export default function RequesterPage() {
     // TODO: generate on page load
     const url = 'https://secret.williamvilleneuve.ca/f38t29';
+    // TODO: fetch once set by sender
+    // TODO: poll every 5s for changes
+    // TODO: maybe: switch to websockets
+    const secret = 'a secret';
 
     return (
         <Layout>
             <Box>
                 <QrCode value={url} />
-                <ShareCopyableField value={url} />
-                <ShareSecretInput value='a secret' />
+                <ShareCopyableField value={url} copyMessage="Copied url!" />
+                <ShareSecretInput value={secret} />
             </Box>
         </Layout>
     );

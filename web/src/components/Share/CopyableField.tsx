@@ -10,11 +10,16 @@ const FlexRow = styled(Row)({
     gap: 4,
 });
 
-export default function ShareCopyableField({ value }: { value: string }) {
+type ShareCopyableFieldProps = {
+    value: string
+    copyMessage?: string
+};
+
+export default function ShareCopyableField({ value, copyMessage }: ShareCopyableFieldProps) {
     return (
         <FlexRow>
             <ReadOnlyInput value={value} />
-            <ShareCopyButton value={value} />
+            <ShareCopyButton value={value} message={copyMessage} />
         </FlexRow>
     );
 }
