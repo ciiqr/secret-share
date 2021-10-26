@@ -7,14 +7,17 @@ FROM base as prereq
 
 COPY package*.json ./
 
-RUN npm install --quiet --unsafe-perm --no-progress --no-audit --only=production
+RUN npm set audit false && \
+    npm set fund false
+
+RUN npm ci --quiet --only=production
 
 # ---------- DEVELOPMENT ----------
 FROM prereq as development
 
 COPY tsconfig.json ./
 
-RUN npm install --quiet --unsafe-perm --no-progress --no-audit --only=development
+RUN npm install --quiet --only=development
 
 # ie. /secret
 ARG PUBLIC_URL='/'
