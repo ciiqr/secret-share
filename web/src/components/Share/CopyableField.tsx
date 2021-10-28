@@ -6,10 +6,6 @@ const ReadOnlyInput = styled.input.attrs(props => ({
     type: 'text',
 }))({});
 
-const FlexRow = styled(Row)({
-    gap: 4,
-});
-
 type ShareCopyableFieldProps = {
     value: string
     copyMessage?: string
@@ -17,9 +13,9 @@ type ShareCopyableFieldProps = {
 
 export default function ShareCopyableField({ value, copyMessage }: ShareCopyableFieldProps) {
     return (
-        <FlexRow>
+        <Row gap={4}>
             <ReadOnlyInput value={value} />
             <ShareCopyButton value={value} message={copyMessage} />
-        </FlexRow>
+        </Row>
     );
 }

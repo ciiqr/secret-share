@@ -14,14 +14,6 @@ const TextArea = styled.textarea({
     },
 });
 
-const FlexRow = styled(Row)({
-    justifyContent: 'space-between',
-});
-
-const FlexColumn = styled(Column)({
-    gap: 4,
-});
-
 const ViewButton = ({ visible, onClick }: { visible: boolean, onClick: (a: object) => void }) => (
     <Button onClick={onClick}>
         <FontAwesomeIcon fixedWidth icon={visible ? faEyeSlash : faEye} />
@@ -36,15 +28,15 @@ export default function ShareSecretInput({ className, value }: { className?: str
     const [secretVisible, setSecretVisible] = useState(false);
 
     return (
-        <FlexColumn className={className}>
+        <Column className={className} gap={4}>
             <ObscurableTextArea value={value} visible={secretVisible} />
-            <FlexRow>
+            <Row justifyContent="space-between">
                 <ViewButton
                     visible={secretVisible}
                     onClick={event => setSecretVisible(!secretVisible)}
                 />
                 <ShareCopyButton value={value} message="Copied secret!" />
-            </FlexRow>
-        </FlexColumn>
+            </Row>
+        </Column>
     );
 }
