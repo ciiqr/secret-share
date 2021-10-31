@@ -14,26 +14,33 @@ const TextArea = styled.textarea({
     },
 });
 
-const ViewButton = ({ visible, onClick }: { visible: boolean, onClick: (a: object) => void }) => (
+// TODO: move
+type ViewButtonProps = {
+    visible: boolean
+    onClick: (a: object) => void
+};
+
+const ViewButton = ({ visible, onClick }: ViewButtonProps) => (
     <Button onClick={onClick}>
         <FontAwesomeIcon fixedWidth icon={visible ? faEyeSlash : faEye} />
     </Button>
 );
 
-const ObscurableTextArea = ({ value, visible }: { value: string, visible: boolean }) => (
-    <TextArea readOnly value={visible ? value : '***'} />
-);
+type ShareSecretInputProps = {
+    className?: string
+    value: string
+};
 
-export default function ShareSecretInput({ className, value }: { className?: string, value: string }) {
-    const [secretVisible, setSecretVisible] = useState(false);
+export default function ShareSecretInput({ className, value }: ShareSecretInputProps) {
+    const [visible, setVisible] = useState(false);
 
     return (
         <Column className={className} gap={4}>
-            <ObscurableTextArea value={value} visible={secretVisible} />
+            <TextArea readOnly value={visible ? value : '***'} />
             <Row justifyContent="space-between">
                 <ViewButton
-                    visible={secretVisible}
-                    onClick={event => setSecretVisible(!secretVisible)}
+                    visible={visible}
+                    onClick={_ => setVisible(!visible)}
                 />
                 <ShareCopyButton value={value} message="Copied secret!" />
             </Row>

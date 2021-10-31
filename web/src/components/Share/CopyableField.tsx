@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 import { Row, ShareCopyButton } from 'components';
 
-const ReadOnlyInput = styled.input.attrs(props => ({
+const ReadOnlyInput = styled.input.attrs({
     readOnly: true,
     type: 'text',
-}))({});
+})({});
 
 type ShareCopyableFieldProps = {
     value: string
