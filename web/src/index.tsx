@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import 'marx-css/css/marx.css';
+import 'the-new-css-reset/css/reset.css';
 import 'index.css';
 import App from 'App';
 import * as serviceWorker from 'serviceWorker';
