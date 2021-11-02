@@ -11,7 +11,7 @@ const Row = styled.div<RowProps>(props => ({
     display: 'flex',
     flexDirection: 'row',
     justifyContent: props.justifyContent,
-    gap: props.gap,
+    gap: props.gap ?? props.theme.spacing?.default,
 }));
 
 export default Row;

@@ -11,7 +11,7 @@ const Column = styled.div<ColumnProps>(props => ({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: props.justifyContent,
-    gap: props.gap,
+    gap: props.gap ?? props.theme.spacing?.default,
 }));
 
 export default Column;

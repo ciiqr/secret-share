@@ -13,7 +13,7 @@ type ShareCopyableFieldProps = {
 
 export default function ShareCopyableField({ value, copyMessage }: ShareCopyableFieldProps) {
     return (
-        <Row gap={4}>
+        <Row>
             <ReadOnlyInput value={value} />
             <ShareCopyButton value={value} message={copyMessage} />
         </Row>

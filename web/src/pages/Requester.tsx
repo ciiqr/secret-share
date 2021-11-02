@@ -2,11 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import { Column, QrCode, Row, ShareCopyableField, ShareSecretInput } from 'components';
 
-// TODO: introduce theme with standard gap values
-
-const Layout = styled(Row)({
-    padding: 4,
-});
+const Layout = styled(Row)(props => ({
+    padding: props.theme.spacing?.default,
+}));
 
 const Box = styled(Column)({
     maxWidth: 400,
@@ -24,7 +22,7 @@ export default function RequesterPage() {
 
     return (
         <Layout justifyContent="space-around">
-            <Box gap={4}>
+            <Box>
                 <QrCode value={url} />
                 <ShareCopyableField value={url} copyMessage="Copied url!" />
                 <ShareSecretInput value={secret} />

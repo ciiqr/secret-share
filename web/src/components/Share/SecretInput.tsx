@@ -35,7 +35,7 @@ export default function ShareSecretInput({ className, value }: ShareSecretInputP
     const [visible, setVisible] = useState(false);
 
     return (
-        <Column className={className} gap={4}>
+        <Column className={className}>
             <TextArea readOnly value={visible ? value : '***'} />
             <Row justifyContent="space-between">
                 <ViewButton
