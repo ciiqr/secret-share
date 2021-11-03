@@ -16,24 +16,36 @@ export default function getLightTheme(): DefaultTheme {
             borderColor: '#007bff',
             color: 'white',
         },
-        // TODO: input
+        input: {
+            borderColor: 'rgba(0,0,0,0.12)',
+            color: 'rgba(0,0,0,0.8)',
+            focus: {
+                borderColor: '#7fbdff',
+            },
+            readonly: {
+                borderColor: 'rgba(0,0,0,0.12)',
+                color: 'rgba(0,0,0,0.54)',
+            },
+            hover: {
+                backgroundColor: '#F7F7F7',
+            }
+        },
+        toast: {
+            style: {
+                backgroundColor: '#36454f',
+                color: '#c7c9d5',
+            },
+            success: {
+                iconTheme: {
+                    primary: '#61d345',
+                    secondary: 'white',
+                },
+                style: {
+                    borderWidth: 2,
+                    borderColor: '#61d345',
+                    borderStyle: 'solid',
+                }
+            },
+        },
     });
 }
-
-// TODO:
-// input, textarea {
-//     border: 1px solid rgba(0,0,0,0.12);
-//     border-radius: 4px;
-//     padding: 8px 16px;
-//     color: rgba(0,0,0,0.8);
-//     line-height: 1.5;
-// }
-// input[readonly],
-// textarea[readonly] {
-//     border-color: rgba(0,0,0,0.12);
-//     color: rgba(0,0,0,0.54);
-// }
-// input[type="text"]:focus,
-// textarea:focus {
-//     border-color: #7fbdff;
-// }

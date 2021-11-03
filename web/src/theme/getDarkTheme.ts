@@ -16,24 +16,36 @@ export default function getDarkTheme(): DefaultTheme {
             borderColor: '#c9bab0',
             color: '#434343',
         },
-        // TODO: input
+        input: {
+            borderColor: '#ffffff1f',
+            color: 'rgba(0,0,0,0.8)',
+            focus: {
+                borderColor: '#e4ddd8',
+            },
+            readonly: {
+                borderColor: '#ffffff1f',
+                color: '#c7c9d5',
+            },
+            hover: {
+                backgroundColor: '#303e47',
+            }
+        },
+        toast: { // TODO: change (currently same as light)
+            style: {
+                backgroundColor: '#36454f',
+                color: '#c7c9d5',
+            },
+            success: {
+                iconTheme: {
+                    primary: '#61d345',
+                    secondary: 'white',
+                },
+                style: {
+                    borderWidth: 2,
+                    borderColor: '#61d345',
+                    borderStyle: 'solid',
+                }
+            },
+        },
     });
 }
-
-// TODO:
-// input, textarea {
-//     border: 1px solid rgba(0,0,0,0.12);
-//     border-radius: 4px;
-//     padding: 8px 16px;
-//     color: rgba(0,0,0,0.8);
-//     line-height: 1.5;
-// }
-// input[readonly],
-// textarea[readonly] {
-//     border-color: #ffffff1f;
-//     color: #c7c9d5;
-// }
-// input[type="text"]:focus,
-// textarea:focus {
-//     border-color: #e4ddd8;
-// }

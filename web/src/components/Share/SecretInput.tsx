@@ -2,16 +2,12 @@ import React, { useState } from 'react';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Column, Button, Row, ShareCopyButton } from 'components';
+import TextArea from 'components/TextArea'; // TODO: why is this sometimes undefined when included through the index...
 import styled from 'styled-components';
 
-const TextArea = styled.textarea({
+const StyledTextArea = styled(TextArea)({
     height: 200,
     resize: 'none',
-    // TODO: url field needs this too
-    // TODO: need a dark move color
-    ":hover": {
-        backgroundColor: '#F7F7F7',
-    },
 });
 
 // TODO: move
@@ -36,7 +32,7 @@ export default function ShareSecretInput({ className, value }: ShareSecretInputP
 
     return (
         <Column className={className}>
-            <TextArea readOnly value={visible ? value : '***'} />
+            <StyledTextArea readOnly value={visible ? value : '***'} />
             <Row justifyContent="space-between">
                 <ViewButton
                     visible={visible}

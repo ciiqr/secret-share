@@ -2,13 +2,13 @@ import styled from "styled-components";
 
 const Button = styled.button(props => ({
     height: 42,
-    borderWidth: 1,
-    borderStyle: 'solid',
-    borderRadius: 4,
     paddingTop: 8,
     paddingBottom: 8,
     paddingLeft: 16,
     paddingRight: 16,
+    borderWidth: 1,
+    borderStyle: 'solid',
+    borderRadius: 4, // TODO: theme
     backgroundColor: props.theme.button?.backgroundColor,
     borderColor: props.theme.button?.borderColor,
     color: props.theme.button?.color,

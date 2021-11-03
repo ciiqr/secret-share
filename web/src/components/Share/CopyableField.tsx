@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { Row, ShareCopyButton } from 'components';
+import { Row, ShareCopyButton, Input } from 'components';
 
-const ReadOnlyInput = styled.input.attrs({
+const ReadOnlyInput = styled(Input).attrs({
     readOnly: true,
     type: 'text',
 })({});
