@@ -19,12 +19,11 @@ export default function getLightTheme(): DefaultTheme {
         input: {
             borderColor: 'rgba(0,0,0,0.12)',
             color: 'rgba(0,0,0,0.8)',
+            readonly: {
+                color: 'rgba(0,0,0,0.54)',
+            },
             focus: {
                 borderColor: '#7fbdff',
-            },
-            readonly: {
-                borderColor: 'rgba(0,0,0,0.12)',
-                color: 'rgba(0,0,0,0.54)',
             },
             hover: {
                 backgroundColor: '#F7F7F7',

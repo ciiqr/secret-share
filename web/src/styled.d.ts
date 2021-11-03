@@ -22,12 +22,11 @@ declare module 'styled-components' {
         input?: {
             borderColor?: string
             color?: string
+            readonly?: {
+                color?: string
+            }
             focus?: {
                 borderColor?: string
-            }
-            readonly?: {
-                borderColor?: string
-                color?: string
             }
             hover?: {
                 backgroundColor?: string

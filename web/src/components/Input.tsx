@@ -9,13 +9,12 @@ const Input = styled.input(props => ({
 
     borderColor: props.theme.input?.borderColor,
     color: props.theme.input?.color,
+    "&[readonly]": {
+        color: props.theme.input?.readonly?.color,
+    },
     ":focus": {
         borderColor: props.theme.input?.focus?.borderColor,
         boxShadow: props.theme.common?.focus?.boxShadow,
-    },
-    "&[readonly]": {
-        borderColor: props.theme.input?.readonly?.borderColor,
-        color: props.theme.input?.readonly?.color,
     },
     ":hover": {
         backgroundColor: props.theme.input?.hover?.backgroundColor,

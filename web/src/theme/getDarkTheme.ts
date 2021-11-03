@@ -19,12 +19,11 @@ export default function getDarkTheme(): DefaultTheme {
         input: {
             borderColor: '#ffffff1f',
             color: 'rgba(0,0,0,0.8)',
+            readonly: {
+                color: '#c7c9d5',
+            },
             focus: {
                 borderColor: '#e4ddd8',
-            },
-            readonly: {
-                borderColor: '#ffffff1f',
-                color: '#c7c9d5',
             },
             hover: {
                 backgroundColor: '#303e47',
