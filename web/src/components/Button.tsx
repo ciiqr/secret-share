@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
 const Button = styled.button(props => ({
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
     height: 42,
     paddingTop: 8,
     paddingBottom: 8,

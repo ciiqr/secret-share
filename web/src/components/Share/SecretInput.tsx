@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Column, Button, Row, ShareCopyButton } from 'components';
+import { Column, Row, ShareCopyButton, ViewButton } from 'components';
 import TextArea from 'components/TextArea'; // TODO: why is this sometimes undefined when included through the index...
 import styled from 'styled-components';
 
@@ -9,18 +7,6 @@ const StyledTextArea = styled(TextArea)({
     height: 200,
     resize: 'none',
 });
-
-// TODO: move
-type ViewButtonProps = {
-    visible: boolean
-    onClick: (a: object) => void
-};
-
-const ViewButton = ({ visible, onClick }: ViewButtonProps) => (
-    <Button onClick={onClick}>
-        <FontAwesomeIcon fixedWidth icon={visible ? faEyeSlash : faEye} />
-    </Button>
-);
 
 type ShareSecretInputProps = {
     className?: string
@@ -32,7 +18,7 @@ export default function ShareSecretInput({ className, value }: ShareSecretInputP
 
     return (
         <Column className={className}>
-            <StyledTextArea readOnly value={visible ? value : '***'} />
+            <StyledTextArea readOnly value={visible || !value ? value : '***'} />
             <Row justifyContent="space-between">
                 <ViewButton
                     visible={visible}
