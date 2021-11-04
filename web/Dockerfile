@@ -23,7 +23,6 @@ RUN npm install --quiet --only=development
 ARG PUBLIC_URL='/'
 ENV PUBLIC_URL="$PUBLIC_URL"
 ENV WDS_SOCKET_PATH="$PUBLIC_URL"
-ENV FAST_REFRESH="true"
 
 ENV PORT=80
 

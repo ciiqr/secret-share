@@ -7,10 +7,10 @@ type ViewButtonProps = {
     onClick: (a: object) => void
 };
 
-const ViewButton = ({ visible, onClick }: ViewButtonProps) => (
-    <Button onClick={onClick}>
-        <FontAwesomeIcon fixedWidth icon={visible ? faEyeSlash : faEye} />
-    </Button>
-);
-
-export default ViewButton;
+export default function ViewButton({ visible, onClick }: ViewButtonProps) {
+    return (
+        <Button onClick={onClick}>
+            <FontAwesomeIcon fixedWidth icon={visible ? faEyeSlash : faEye} />
+        </Button>
+    );
+}

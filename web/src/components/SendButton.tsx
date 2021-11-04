@@ -6,10 +6,10 @@ type SendButtonProps = {
     onClick: (e: object) => void
 };
 
-const SendButton = ({ onClick }: SendButtonProps) => (
-    <Button onClick={onClick}>
-        <FontAwesomeIcon fixedWidth icon={faPaperPlane } />
-    </Button>
-);
-
-export default SendButton;
+export default function SendButton({ onClick }: SendButtonProps) {
+    return (
+        <Button onClick={onClick}>
+            <FontAwesomeIcon fixedWidth icon={faPaperPlane} />
+        </Button>
+    )
+}
