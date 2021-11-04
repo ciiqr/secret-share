@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import styled from 'styled-components';
 import { Column, Row, TextArea, ShareCopyableField, SendButton } from 'components';
 import toast from 'react-hot-toast';

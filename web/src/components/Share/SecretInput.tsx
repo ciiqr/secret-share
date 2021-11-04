@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Column, Row, ShareCopyButton, ViewButton } from 'components';
 import TextArea from 'components/TextArea'; // TODO: why is this sometimes undefined when included through the index...
 import styled from 'styled-components';

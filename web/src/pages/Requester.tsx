@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import { Column, QrCode, Row, ShareCopyableField, ShareSecretInput } from 'components';
 

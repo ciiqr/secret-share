@@ -1,4 +1,4 @@
-import React, { PropsWithChildren } from 'react';
+import { PropsWithChildren } from 'react';
 import useColorScheme from 'hooks/useColorScheme';
 import { ThemeProvider } from 'styled-components';
 import getDarkTheme from 'theme/getDarkTheme';
