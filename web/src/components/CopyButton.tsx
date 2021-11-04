@@ -31,12 +31,12 @@ async function copyToClipboard(value: string, message: string) {
     toast.success(message);
 }
 
-type ShareCopyButtonProps = {
+type CopyButtonProps = {
     value: string
     message?: string
 }
 
-export default function ShareCopyButton({ value, message }: ShareCopyButtonProps) {
+export default function CopyButton({ value, message }: CopyButtonProps) {
     const msg = message || 'Copied!';
 
     return (

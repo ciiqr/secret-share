@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import styled from 'styled-components';
-import { Column, Row, TextArea, ShareCopyableField, SendButton } from 'components';
+import { Column, Row, TextArea, CopyableField, SendButton } from 'components';
 import toast from 'react-hot-toast';
 
 // TODO: make common
@@ -31,7 +31,7 @@ export default function SenderPage() {
     return (
         <Layout justifyContent="space-around">
             <Content>
-                <ShareCopyableField value={window.location.href} />
+                <CopyableField value={window.location.href} />
                 {/* TODO: would be nice if text area could be hidden while typing... */}
                 <StyledTextArea value={secret} onChange={e => setSecret(e.target.value)} />
                 <SendButton onClick={() => sendSecret(secret)} />

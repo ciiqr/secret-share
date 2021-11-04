@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Column, Row, ShareCopyButton, ViewButton } from 'components';
+import { Column, Row, CopyButton, ViewButton } from 'components';
 import TextArea from 'components/TextArea'; // TODO: why is this sometimes undefined when included through the index...
 import styled from 'styled-components';
 
@@ -8,12 +8,12 @@ const StyledTextArea = styled(TextArea)({
     resize: 'none',
 });
 
-type ShareSecretInputProps = {
+type SecretInputProps = {
     className?: string
     value: string
 };
 
-export default function ShareSecretInput({ className, value }: ShareSecretInputProps) {
+export default function SecretInput({ className, value }: SecretInputProps) {
     const [visible, setVisible] = useState(false);
 
     return (
@@ -24,7 +24,7 @@ export default function ShareSecretInput({ className, value }: ShareSecretInputP
                     visible={visible}
                     onClick={_ => setVisible(!visible)}
                 />
-                <ShareCopyButton value={value} message="Copied secret!" />
+                <CopyButton value={value} message="Copied secret!" />
             </Row>
         </Column>
     );

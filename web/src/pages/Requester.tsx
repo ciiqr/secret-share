@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Column, QrCode, Row, ShareCopyableField, ShareSecretInput } from 'components';
+import { Column, QrCode, Row, CopyableField, SecretInput } from 'components';
 
 const Layout = styled(Row)(props => ({
     padding: props.theme.spacing?.default,
@@ -23,8 +23,8 @@ export default function RequesterPage() {
         <Layout justifyContent="space-around">
             <Box>
                 <QrCode value={url} />
-                <ShareCopyableField value={url} copyMessage="Copied url!" />
-                <ShareSecretInput value={secret} />
+                <CopyableField value={url} copyMessage="Copied url!" />
+                <SecretInput value={secret} />
             </Box>
         </Layout>
     );

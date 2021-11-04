@@ -1,21 +1,21 @@
 import styled from 'styled-components';
-import { Row, ShareCopyButton, Input } from 'components';
+import { Row, CopyButton, Input } from 'components';
 
 const ReadOnlyInput = styled(Input).attrs({
     readOnly: true,
     type: 'text',
 })({});
 
-type ShareCopyableFieldProps = {
+type CopyableFieldProps = {
     value: string
     copyMessage?: string
 };
 
-export default function ShareCopyableField({ value, copyMessage }: ShareCopyableFieldProps) {
+export default function CopyableField({ value, copyMessage }: CopyableFieldProps) {
     return (
         <Row>
             <ReadOnlyInput value={value} />
-            <ShareCopyButton value={value} message={copyMessage} />
+            <CopyButton value={value} message={copyMessage} />
         </Row>
     );
 }
