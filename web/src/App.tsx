@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import RequesterPage from 'pages/Requester';
 import SenderPage from 'pages/Sender'
 import Theme from 'theme/Theme';
@@ -12,12 +12,11 @@ export default function App() {
         <Theme>
             <Background>
                 <ToastContainer />
-                <Switch>
-                    <Route path="/" component={RequesterPage} exact />
-                    <Route path="/:id" component={SenderPage} exact />
-                    <Route>Much wow</Route>
-                </Switch>
-            </Background>
+                <Routes>
+                    <Route path="/" element={<RequesterPage />} />
+                    <Route path="/:id" element={<SenderPage />} />
+                    <Route path="*" element={<p>Much wow</p>} />
+                </Routes>
         </Theme>
     );
 }
