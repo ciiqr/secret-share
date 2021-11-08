@@ -38,7 +38,7 @@ async function init() {
 
     // TODO: create secret request returning a url
     // - public key (jwt format)
-    // TODO: generate actual url with a base36 encoded id for the url: statically 6 digits for now, go up to 10 if it ends up mattering: 60466176, 100000 # first 6 digit base36 number: 36^5...(36^6-1)
+    // TODO: generate actual url with a base36 encoded id for the url: statically 6 digits for now, go up to 10 if it ends up mattering: 60466176-2176782335 are 6 digits in base 36 # first 6 digit base36 number: 36^5...(36^6-1)
     // const url = 'https://google.com/search?q=' + publicKeyJwk.n;
     const url = 'https://secret.williamvilleneuve.ca/' + 'f38t29';
     // update url

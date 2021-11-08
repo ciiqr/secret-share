@@ -8,14 +8,14 @@ const ReadOnlyInput = styled(Input).attrs({
 
 type CopyableFieldProps = {
     value: string
-    copyMessage?: string
+    message?: string
 };
 
-export default function CopyableField({ value, copyMessage }: CopyableFieldProps) {
+export default function CopyableField({ value, message }: CopyableFieldProps) {
     return (
         <Row>
             <ReadOnlyInput value={value} />
-            <CopyButton value={value} message={copyMessage} />
+            <CopyButton value={value} message={message} />
         </Row>
     );
 }

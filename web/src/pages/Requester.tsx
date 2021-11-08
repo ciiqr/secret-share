@@ -24,7 +24,7 @@ export default function RequesterPage() {
         <Layout justifyContent="space-around">
             <Box>
                 <QrCode value={url} />
-                <CopyableField value={url} copyMessage="Copied url!" />
+                <CopyableField value={url} message="Copied url!" />
                 <SecretInput value={secret} />
             </Box>
         </Layout>
