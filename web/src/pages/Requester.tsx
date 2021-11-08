@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Column, QrCode, Row, CopyableField, SecretInput } from 'components';
+import UrlHelper from 'helpers/Url'
 
 const Layout = styled(Row)(props => ({
     padding: props.theme.spacing?.default,
@@ -12,7 +13,7 @@ const Box = styled(Column)({
 
 export default function RequesterPage() {
     // TODO: generate on page load
-    const url = 'https://secret.williamvilleneuve.ca/f38t29';
+    const url = UrlHelper.absolute('/f38t29');
     // TODO: fetch once set by sender
     // TODO: poll every 5s for changes
     // TODO: maybe increase poll time after a few minutes
