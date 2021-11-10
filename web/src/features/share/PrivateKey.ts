@@ -17,7 +17,7 @@ export default class PrivateKey {
         this.keyPair = keyPair;
     }
 
-    public async getPublicKeyJwk(): Promise<object> { // TODO: why no JSONWebKey
+    public async getPublicKeyJwk(): Promise<JsonWebKey> {
         return await window.crypto.subtle.exportKey(
             Encryption.KEY_FORMAT,
             this.keyPair.publicKey!,

@@ -1,7 +1,7 @@
 import Encryption from 'features/share/Encryption';
 
 export default class PublicKey {
-    public static async import(publicKeyJwk: object) { // TODO: why no JSONWebKey
+    public static async import(publicKeyJwk: JsonWebKey) {
         const key = await window.crypto.subtle.importKey(
             Encryption.KEY_FORMAT,
             publicKeyJwk,

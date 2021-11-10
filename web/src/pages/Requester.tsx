@@ -1,8 +1,9 @@
-import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Column, QrCode, Row, CopyableField, SecretInput } from 'components';
 import UrlHelper from 'helpers/Url';
 import PrivateKey from 'features/share/PrivateKey';
+import { useAsync } from 'react-async-hook';
+
 
 const Layout = styled(Row)(props => ({
     padding: props.theme.spacing?.default,
@@ -13,27 +14,13 @@ const Box = styled(Column)({
     width: '100%',
 });
 
-// TODO: move & refactor... this likely can cause issues as is
-function usePrivateKey() {
-    const [privateKey, setPrivateKey] = useState<PrivateKey | null>(null);
-
-    useEffect(() => {
-        (async () => {
-            const key = await PrivateKey.generate();
-            setPrivateKey(key);
-        })();
-    }, []);
-
-    return {
-        privateKey,
-    };
-}
-
 export default function RequesterPage() {
-    const { privateKey } = usePrivateKey();
-    // TODO: generate on page load
-        // const publicKeyJwk = await privateKey.getPublicKeyJwk();
-    const url = UrlHelper.absolute('/f38t29');
+    const { result: privateKey } = useAsync(async () => PrivateKey.generate(), []);
+    const { result: publicKey } = useAsync(async () => privateKey?.getPublicKeyJwk(), [privateKey]);
+
+    // TODO: get a unique id from the server instead
+    const id = publicKey?.n?.slice(0, 6);
+    const url = UrlHelper.absolute(`/${id}`);
     // TODO: fetch once set by sender
     // TODO: poll every 5s for changes
     // TODO: maybe increase poll time after a few minutes
@@ -41,7 +28,7 @@ export default function RequesterPage() {
     const secret = 'a secret';
 
     // TODO: proper loading indicator if we don't have key & id yet
-    if (!privateKey) {
+    if (!publicKey) {
         return <p>loading...</p>;
     }
 
