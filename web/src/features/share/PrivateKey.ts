@@ -3,7 +3,7 @@ import Encryption from 'features/share/Encryption';
 export default class PrivateKey {
     public static async generate() {
         const keyPair = await window.crypto.subtle.generateKey(
-            Encryption.ALGORITHM,
+            Encryption.algorithm,
             false,
             ['encrypt', 'decrypt']
         );
@@ -19,14 +19,14 @@ export default class PrivateKey {
 
     public async getPublicKeyJwk(): Promise<JsonWebKey> {
         return await window.crypto.subtle.exportKey(
-            Encryption.KEY_FORMAT,
+            Encryption.keyFormat,
             this.keyPair.publicKey!,
         );
     }
 
     public async decrypt(encrypted: ArrayBuffer): Promise<string> {
         const decrypted = await window.crypto.subtle.decrypt(
-            Encryption.ALGORITHM,
+            Encryption.algorithm,
             this.keyPair.privateKey!,
             encrypted
         );

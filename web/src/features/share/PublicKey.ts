@@ -3,9 +3,9 @@ import Encryption from 'features/share/Encryption';
 export default class PublicKey {
     public static async import(publicKeyJwk: JsonWebKey) {
         const key = await window.crypto.subtle.importKey(
-            Encryption.KEY_FORMAT,
+            Encryption.keyFormat,
             publicKeyJwk,
-            Encryption.ALGORITHM,
+            Encryption.algorithm,
             false,
             ['encrypt']
         );
@@ -23,7 +23,7 @@ export default class PublicKey {
         const encoder = new TextEncoder();
         const data = encoder.encode(message);
         const encrypted = await window.crypto.subtle.encrypt(
-            Encryption.ALGORITHM,
+            Encryption.algorithm,
             this.key,
             data.buffer
         );

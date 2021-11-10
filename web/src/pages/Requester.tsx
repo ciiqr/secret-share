@@ -4,7 +4,6 @@ import UrlHelper from 'helpers/Url';
 import PrivateKey from 'features/share/PrivateKey';
 import { useAsync } from 'react-async-hook';
 
-
 const Layout = styled(Row)(props => ({
     padding: props.theme.spacing?.default,
 }));
