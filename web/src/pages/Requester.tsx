@@ -1,17 +1,7 @@
-import styled from 'styled-components';
-import { Column, QrCode, Row, CopyableField, SecretInput } from 'components';
+import { QrCode, CopyableField, SecretInput, Layout, Content } from 'components';
 import UrlHelper from 'helpers/Url';
 import PrivateKey from 'features/share/PrivateKey';
 import { useAsync } from 'react-async-hook';
-
-const Layout = styled(Row)(props => ({
-    padding: props.theme.spacing?.default,
-}));
-
-const Box = styled(Column)({
-    maxWidth: 400,
-    width: '100%',
-});
 
 export default function RequesterPage() {
     const { result: privateKey } = useAsync(async () => PrivateKey.generate(), []);
@@ -32,12 +22,12 @@ export default function RequesterPage() {
     }
 
     return (
-        <Layout justifyContent="space-around">
-            <Box>
+        <Layout>
+            <Content>
                 <QrCode value={url} />
                 <CopyableField value={url} message="Copied url!" />
                 <SecretInput value={secret} />
-            </Box>
+            </Content>
         </Layout>
     );
 }

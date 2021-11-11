@@ -9,3 +9,5 @@ export { default as CopyButton } from 'components/CopyButton';
 export { default as SecretInput } from 'components/SecretInput';
 export { default as TextArea } from 'components/TextArea';
 export { default as ViewButton } from 'components/ViewButton';
+export { default as Layout } from 'components/Layout';
+export { default as Content } from 'components/Content';

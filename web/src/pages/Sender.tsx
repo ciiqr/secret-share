@@ -1,17 +1,7 @@
 import { useState } from 'react';
 import styled from 'styled-components';
-import { Column, Row, TextArea, CopyableField, SendButton } from 'components';
+import { TextArea, CopyableField, SendButton, Layout, Content } from 'components';
 import toast from 'react-hot-toast';
-
-// TODO: make common
-const Layout = styled(Row)(props => ({
-    padding: props.theme.spacing?.default,
-}));
-
-const Content = styled(Column)({
-    maxWidth: 400,
-    width: '100%',
-});
 
 const StyledTextArea = styled(TextArea)({
     height: 200,
@@ -29,7 +19,7 @@ export default function SenderPage() {
     const [secret, setSecret] = useState('');
 
     return (
-        <Layout justifyContent="space-around">
+        <Layout>
             <Content>
                 <CopyableField value={window.location.href} />
                 {/* TODO: would be nice if text area could be hidden while typing... */}
