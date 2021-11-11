@@ -5,6 +5,7 @@ const Button = styled.button(props => ({
     justifyContent: 'center',
     alignItems: 'center',
     height: 42,
+    lineHeight: 1,
     paddingTop: 8,
     paddingBottom: 8,
     paddingLeft: 16,

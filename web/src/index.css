@@ -1,19 +1,7 @@
-/* RESET */
 html, body, #root {
     height: 100%;
 }
 
-button {
-    /* TODO: weird...  */
-    line-height: 1;
-}
-
-input {
-    /* TODO: move? or maybe this is fine... idk... */
-    width: 100%;
-}
-
 body {
-    /* TODO: probs not here */
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }

@@ -6,6 +6,7 @@ const Input = styled.input(props => ({
     borderRadius: 4,
     padding: '8px 16px',
     lineHeight: '1.5',
+    width: '100%',
 
     borderColor: props.theme.input?.borderColor,
     color: props.theme.input?.color,
