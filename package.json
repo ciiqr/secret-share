@@ -7,12 +7,12 @@
     "scripts": {
         "start": "docker-compose up -d --build --remove-orphans",
         "stop": "docker-compose down -v",
-        "logs": "docker-compose logs -f server web",
+        "logs": "docker-compose logs -f web",
         "debug": "npm restart && npm run logs",
-        "postinstall": "npm install -C web && npm install -C server",
-        "test": "docker-compose run server npm test && docker-compose run web npm test",
-        "test:watch": "echo 'TODO: run web and server tests at the same time via tmex package/etc' && exit 1 && docker-compose run server npm run test:watch",
-        "view:coverage": "echo 'TODO: web coverage' && exit 1 && docker-compose run -p 5000:5000 server npm run view:coverage"
+        "postinstall": "npm install -C web",
+        "test": "docker-compose run web npm test",
+        "test:watch": "docker-compose run web npm run test:watch",
+        "view:coverage": "echo 'TODO: web coverage' && exit 1 && docker-compose run -p 5000:5000 web npm run view:coverage"
     },
     "author": "",
     "license": "MIT",

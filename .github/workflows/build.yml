@@ -11,7 +11,6 @@ jobs:
       matrix:
         image:
           - web
-          - server
     steps:
     - uses: actions/checkout@v2
     - name: Set up Docker Buildx
@@ -32,5 +31,4 @@ jobs:
         cache-from: type=gha
         cache-to: type=gha,mode=max
 
-# TODO: consider triggering a deploy
 # TODO: consider auto generating tags for docker images (ie. by getting the latest release & incrementing it: https://github.com/pozetroninc/github-action-get-latest-release)

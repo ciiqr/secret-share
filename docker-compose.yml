@@ -1,40 +1,13 @@
 version: '3.6'
 services:
-  proxy:
-    image: ghcr.io/ciiqr/basic-nginx:latest
-    environment:
-      SERVER_CONFIG: |
-        # location /secret {
-        location / {
-          proxy_pass http://web;
-
-          # websocket support for react devtools
-          proxy_set_header Upgrade $$http_upgrade;
-          proxy_set_header Connection "Upgrade";
-        }
-
-        # location /secret/api {
-        location /api {
-          proxy_pass http://server;
-        }
-    ports:
-      - '80:80'
-  server:
-    build:
-      context: server
-      target: development
-    environment:
-      SERVER_BASE_PATH: /api
-    ports:
-      - '9229:9229' # debugging port
-    volumes:
-      - './server/src:/var/app/src:delegated'
   web:
     build:
       context: web
       target: development
       # args:
       #   PUBLIC_URL: /secret
+    ports:
+      - '80:80'
     volumes:
       - './web/src:/var/app/src:delegated'
       - './web/public:/var/app/public:delegated'
