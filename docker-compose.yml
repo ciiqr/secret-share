@@ -2,12 +2,12 @@ version: '3.6'
 services:
   web:
     build:
-      context: web
+      context: .
       target: development
       # args:
       #   PUBLIC_URL: /secret
     ports:
       - '80:80'
     volumes:
-      - './web/src:/var/app/src:delegated'
-      - './web/public:/var/app/public:delegated'
+      - './src:/var/app/src:delegated'
+      - './public:/var/app/public:delegated'

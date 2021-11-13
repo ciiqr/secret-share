@@ -5,12 +5,8 @@ on:
       - main
 jobs:
   build:
-    name: Build ${{ matrix.image }}
+    name: Build secret-share
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        image:
-          - web
     steps:
     - uses: actions/checkout@v2
     - name: Set up Docker Buildx
@@ -24,9 +20,8 @@ jobs:
     - name: Build and push to registry
       uses: docker/build-push-action@v2
       with:
-        context: ./${{ matrix.image }}
-        file: ./${{ matrix.image }}/Dockerfile
-        tags: ghcr.io/${{ github.repository }}/${{ matrix.image }}:latest
+        context: .
+        tags: ghcr.io/${{ github.repository }}:latest
         push: true
         cache-from: type=gha
         cache-to: type=gha,mode=max
