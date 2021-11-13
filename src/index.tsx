@@ -7,6 +7,7 @@ import App from 'components/App';
 import * as serviceWorker from 'serviceWorker';
 import { BrowserRouter } from 'react-router-dom';
 import DomHelper from 'helpers/Dom'
+import 'ghspa';
 
 const base = DomHelper.getBasePath();
 const root = document.getElementById('root');

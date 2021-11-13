@@ -20,7 +20,8 @@ jobs:
       env:
         PUBLIC_URL: /secret-share
     - name: Setup 404 as index
-      run: cp build/index.html build/404.html
+      # TODO: if we eject maytbe we can make this automatic with webpack
+      run: sed -E 's@<title>Secret Share</title>@<title>404</title>@g' <build/index.html >build/404.html
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:
