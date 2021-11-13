@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import { TextArea, CopyableField, SendButton, Layout, Content } from 'components';
 import toast from 'react-hot-toast';
@@ -53,9 +54,9 @@ function sendSecret(bugout: Bugout, secret: string) {
 // TODO: add a loading indicator for sending
 // TODO: add an indicator for whether we're connected
 export default function SenderPage() {
-    const id = window.location.pathname.replace(/^\//, '');
+    let { address } = useParams();
     const [secret, setSecret] = useState('');
-    const {bugout, ready} = useBugoutClient(id);
+    const { bugout, ready } = useBugoutClient(address!);
 
     return (
         <Layout>

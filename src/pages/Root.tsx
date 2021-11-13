@@ -6,7 +6,7 @@ export default function RootPage() {
     return (
         <Routes>
             <Route path="/" element={<RequesterPage />} />
-            <Route path="/:id" element={<SenderPage />} />
+            <Route path="/:address" element={<SenderPage />} />
             <Route path="*" element={<p>Much wow</p>} />
         </Routes>
     );
