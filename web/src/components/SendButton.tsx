@@ -4,11 +4,12 @@ import Button from "./Button";
 
 type SendButtonProps = {
     onClick: (e: object) => void
+    disabled?: boolean
 };
 
-export default function SendButton({ onClick }: SendButtonProps) {
+export default function SendButton({ onClick, disabled }: SendButtonProps) {
     return (
-        <Button onClick={onClick}>
+        <Button disabled={disabled} onClick={onClick}>
             <FontAwesomeIcon fixedWidth icon={faPaperPlane} />
         </Button>
     )

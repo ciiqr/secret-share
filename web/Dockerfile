@@ -10,6 +10,9 @@ COPY package*.json ./
 RUN npm set audit false && \
     npm set fund false
 
+# NOTE: only required for some projects (the below npm command will fail if this is required)
+RUN apk add --no-cache git
+
 RUN npm ci --quiet --only=production
 
 # ---------- DEVELOPMENT ----------

@@ -1,25 +1,71 @@
 import { QrCode, CopyableField, SecretInput, Layout, Content } from 'components';
 import UrlHelper from 'helpers/Url';
-import PrivateKey from 'features/share/PrivateKey';
-import { useAsync } from 'react-async-hook';
+import { useState, useEffect } from 'react';
+import Bugout from 'bugout';
+import toast from 'react-hot-toast';
 
+// TODO: cleanup
+type OnSecretReceived = (secret: string) => boolean;
+function useBugoutServer({onSecretReceived} : {onSecretReceived: OnSecretReceived}) {
+    // const [ready, setReady] = useState(false);
+    const [bugout] = useState<Bugout>(() =>
+        new Bugout({ announce: ["wss://tracker.openwebtorrent.com", "wss://tracker.btorrent.xyz"]})
+    );
+
+    const address = bugout.address();
+
+    useEffect(() => {
+        // register rpc calls clients can use
+        bugout.register("shareSecret", (address, args, cb) => {
+            const { secret } = args;
+            const success = onSecretReceived(secret);
+            cb({success});
+        });
+
+        // TODO: connections are weird, probs just not worth relying on for this
+        // handle events
+        // bugout.on("seen", (peerAddress) => {
+        //     toast.success('Connected!');
+        // });
+        // bugout.on("connections", (c) => {
+        //     // if (c === 0) {
+        //     //     setReady(true);
+        //     // }
+
+        //     // TODO: maybe show in some better way...
+        //     // if (c === 1) {
+        //     //     toast.success('Connected!');
+        //     // }
+        // });
+
+        // TODO: figure out why this causes issues
+        return () => {
+            try {
+                bugout.destroy();
+            }
+            catch(err) {
+                // TODO: not sure why this throws sometimes
+            }
+        };
+    }, [bugout, onSecretReceived]);
+
+    return {
+        bugout,
+        address,
+    };
+}
+
+// TODO: consider some sort of loading/ready indicator
 export default function RequesterPage() {
-    const { result: privateKey } = useAsync(async () => PrivateKey.generate(), []);
-    const { result: publicKey } = useAsync(async () => privateKey?.getPublicKeyJwk(), [privateKey]);
+    const [secret, setSecret] = useState('');
+    const { address } = useBugoutServer({onSecretReceived: (newSecret) => {
+        setSecret(newSecret);
 
-    // TODO: get a unique id from the server instead
-    const id = publicKey?.n?.slice(0, 6);
-    const url = UrlHelper.absolute(`/${id}`);
-    // TODO: fetch once set by sender
-    // TODO: poll every 5s for changes
-    // TODO: maybe increase poll time after a few minutes
-    // TODO: maybe: switch to websockets
-    const secret = 'a secret';
-
-    // TODO: proper loading indicator if we don't have key & id yet
-    if (!publicKey) {
-        return <p>loading...</p>;
-    }
+        toast.success('Secret received!');
+        // TODO: disconnect
+        return true;
+    }});
+    const url = UrlHelper.absolute(`/${address}`);
 
     return (
         <Layout>

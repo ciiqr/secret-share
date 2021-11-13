@@ -32,6 +32,10 @@ const Button = styled.button(props => ({
     // ":not(:disabled):active": {
     //     filter: 'brightness(70%)',
     // },
+    // TODO: theme
+    ":disabled": {
+        filter: 'saturate(0)',
+    }
 }));
 
 export default Button;
