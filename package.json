@@ -6,8 +6,9 @@
     "main": "index.js",
     "scripts": {
         "start": "docker-compose up -d --build --remove-orphans",
+        "restart": "docker-compose down -v; npm start",
         "logs": "docker-compose logs -f server web",
-        "debug": "npm start && npm run logs",
+        "debug": "npm run restart && npm run logs",
         "postinstall": "npm install -C web && npm install -C server",
         "test": "docker-compose run server npm test && docker-compose run web npm test",
         "test:watch": "echo 'TODO: run web and server tests at the same time via tmex package/etc' && exit 1 && docker-compose run server npm run test:watch",
