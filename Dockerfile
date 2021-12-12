@@ -1,4 +1,4 @@
-FROM node:14-alpine as base
+FROM node:16-alpine as base
 
 WORKDIR /var/app
 
@@ -8,7 +8,8 @@ FROM base as prereq
 COPY package*.json ./
 
 RUN npm set audit false && \
-    npm set fund false
+    npm set fund false && \
+    npm set update-notifier false
 
 # NOTE: only required for some projects (the below npm command will fail if this is required)
 RUN apk add --no-cache git
@@ -20,7 +21,7 @@ FROM prereq as development
 
 COPY tsconfig.json ./
 
-RUN npm install --quiet --only=development
+RUN npm install --quiet
 
 # ie. /secret
 ARG PUBLIC_URL='/'
