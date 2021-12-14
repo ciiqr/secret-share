@@ -56,7 +56,6 @@ function sendSecret(bugout: Bugout, secret: string) {
     bugout.rpc('shareSecret', { secret }, function (result: unknown) {
         // TODO: if server responds positively (result.success), disconnect
         // TODO: check result.error too?
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         console.log(61, { result });
     });
 

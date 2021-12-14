@@ -12,6 +12,10 @@ module.exports = {
         'plugin:@typescript-eslint/recommended-requiring-type-checking',
         'prettier',
     ],
+    rules: {
+        // TODO: revert once we type bugout proper
+        '@typescript-eslint/no-unsafe-assignment': 'off',
+    },
 };
 
 // TODO: consider extending a common base: https://typescript-eslint.io/docs/linting/linting#community-configs

@@ -33,7 +33,6 @@ function useBugoutServer({
     useEffect(() => {
         // register rpc calls clients can use
         bugout.register('shareSecret', (address, args, cb) => {
-            // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
             const { secret } = args;
             // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
             const success = onSecretReceived(secret);
