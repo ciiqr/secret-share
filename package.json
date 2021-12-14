@@ -52,14 +52,8 @@
         "test:watch": "react-scripts test --coverage --watchAll",
         "test:debug": "react-scripts --inspect-brk test --runInBand --no-cache",
         "lint": "eslint --ext js,ts,tsx src && prettier --check .",
-        "lint:fix": "eslint --ext js,ts,tsx src --fix && prettier --write .",
+        "lint:fix": "eslint --ext js,ts,tsx src --fix && prettier --check --write .",
         "eject": "react-scripts eject"
-    },
-    "eslintConfig": {
-        "extends": "react-app",
-        "rules": {
-            "import/no-anonymous-default-export": "off"
-        }
     },
     "browserslist": {
         "production": [
