@@ -21,7 +21,7 @@ function useBugoutClient(serverAddress: string) {
 
     useEffect(() => {
         // handle events
-        bugout.on("server", function(address) {
+        bugout.on("server", function() {
             setReady(true);
 
             // TODO: maybe show in some better way...
@@ -41,9 +41,10 @@ function useBugoutClient(serverAddress: string) {
 }
 
 function sendSecret(bugout: Bugout, secret: string) {
-    bugout.rpc("shareSecret", {secret}, function(result: any) {
+    bugout.rpc("shareSecret", {secret}, function(result: unknown) {
         // TODO: if server responds positively (result.success), disconnect
         // TODO: check result.error too?
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         console.log(61, {result});
     });
 
@@ -54,9 +55,9 @@ function sendSecret(bugout: Bugout, secret: string) {
 // TODO: add a loading indicator for sending
 // TODO: add an indicator for whether we're connected
 export default function SenderPage() {
-    let { address } = useParams();
+    const { address } = useParams();
     const [secret, setSecret] = useState('');
-    const { bugout, ready } = useBugoutClient(address!);
+    const { bugout, ready } = useBugoutClient(address ?? '');
 
     return (
         <Layout>

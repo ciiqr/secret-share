@@ -22,7 +22,7 @@ export default function SecretInput({ className, value }: SecretInputProps) {
             <Row justifyContent="space-between">
                 <ViewButton
                     visible={visible}
-                    onClick={_ => setVisible(!visible)}
+                    onClick={() => setVisible(!visible)}
                 />
                 <CopyButton value={value} message="Copied secret!" />
             </Row>

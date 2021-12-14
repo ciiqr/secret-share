@@ -48,7 +48,7 @@ export function register(config?: Config) {
 
         // Add some additional logging to localhost, pointing developers to the
         // service worker/PWA documentation.
-        navigator.serviceWorker.ready.then(() => {
+        void navigator.serviceWorker.ready.then(() => {
           console.log(
             'This web app is being served cache-first by a service ' +
               'worker. To learn more, visit https://bit.ly/CRA-PWA'
@@ -119,8 +119,8 @@ function checkValidServiceWorker(swUrl: string, config?: Config) {
         (contentType != null && contentType.indexOf('javascript') === -1)
       ) {
         // No service worker found. Probably a different app. Reload the page.
-        navigator.serviceWorker.ready.then(registration => {
-          registration.unregister().then(() => {
+        void navigator.serviceWorker.ready.then(registration => {
+          void registration.unregister().then(() => {
             window.location.reload();
           });
         });
@@ -140,9 +140,10 @@ export function unregister() {
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.ready
       .then(registration => {
-        registration.unregister();
+        void registration.unregister();
       })
       .catch(error => {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
         console.error(error.message);
       });
   }

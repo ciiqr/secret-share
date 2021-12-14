@@ -1,9 +1,12 @@
 export = Bugout;
+
+type EventEmitter = events.EventEmitter;
+
 /**
  * Multi-party data channels on WebTorrent extension.
  */
 // declare function Bugout(identifier?: any, opts?: any): Bugout;
-declare class Bugout extends events.EventEmitter {
+declare class Bugout extends EventEmitter {
     /**
      * Multi-party data channels on WebTorrent extension.
      */
@@ -18,11 +21,11 @@ declare class Bugout extends events.EventEmitter {
     pk: any;
     ek: any;
     identifier: any;
-    peers: {};
-    seen: {};
+    peers: Record<string, unknown>;
+    seen: Record<string, unknown>;
     lastwirecount: any;
-    api: {};
-    callbacks: {};
+    api: Record<string, unknown>;
+    callbacks: Record<string, unknown>;
     serveraddress: any;
     heartbeattimer: NodeJS.Timer;
     torrent: any;
