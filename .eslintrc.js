@@ -13,6 +13,7 @@ module.exports = {
         'prettier',
     ],
     rules: {
+        'import/no-anonymous-default-export': 'off',
         // TODO: revert once we type bugout proper
         '@typescript-eslint/no-unsafe-assignment': 'off',
     },

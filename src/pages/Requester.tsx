@@ -32,13 +32,16 @@ function useBugoutServer({
 
     useEffect(() => {
         // register rpc calls clients can use
-        bugout.register('shareSecret', (address, args, cb) => {
-            const { secret } = args;
-            // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-            const success = onSecretReceived(secret);
-            // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-            cb({ success });
-        });
+        bugout.register(
+            'shareSecret',
+            (address, args: Record<string, string>, cb) => {
+                const { secret } = args;
+                // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+                const success = onSecretReceived(secret);
+                // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+                cb({ success });
+            },
+        );
 
         // TODO: connections are weird, probs just not worth relying on for this
         // handle events
