@@ -9,8 +9,8 @@ const StyledTextArea = styled(TextArea)({
 });
 
 type SecretInputProps = {
-    className?: string
-    value: string
+    className?: string;
+    value: string;
 };
 
 export default function SecretInput({ className, value }: SecretInputProps) {
@@ -18,7 +18,10 @@ export default function SecretInput({ className, value }: SecretInputProps) {
 
     return (
         <Column className={className}>
-            <StyledTextArea readOnly value={visible || !value ? value : '***'} />
+            <StyledTextArea
+                readOnly
+                value={visible || !value ? value : '***'}
+            />
             <Row justifyContent="space-between">
                 <ViewButton
                     visible={visible}

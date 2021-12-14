@@ -1,6 +1,6 @@
-import { DefaultTheme } from "styled-components";
-import getBaseTheme from "./getBaseTheme";
-import mergeThemes from "./mergeThemes";
+import { DefaultTheme } from 'styled-components';
+import getBaseTheme from './getBaseTheme';
+import mergeThemes from './mergeThemes';
 
 export default function getLightTheme(): DefaultTheme {
     return mergeThemes(getBaseTheme(), {
@@ -27,7 +27,7 @@ export default function getLightTheme(): DefaultTheme {
             },
             hover: {
                 backgroundColor: '#F7F7F7',
-            }
+            },
         },
         toast: {
             style: {
@@ -43,7 +43,7 @@ export default function getLightTheme(): DefaultTheme {
                     borderWidth: 2,
                     borderColor: '#61d345',
                     borderStyle: 'solid',
-                }
+                },
             },
         },
     });

@@ -1,6 +1,6 @@
-import { DefaultTheme } from "styled-components";
-import getBaseTheme from "./getBaseTheme";
-import mergeThemes from "./mergeThemes";
+import { DefaultTheme } from 'styled-components';
+import getBaseTheme from './getBaseTheme';
+import mergeThemes from './mergeThemes';
 
 export default function getDarkTheme(): DefaultTheme {
     return mergeThemes(getBaseTheme(), {
@@ -27,9 +27,10 @@ export default function getDarkTheme(): DefaultTheme {
             },
             hover: {
                 backgroundColor: '#303e47',
-            }
+            },
         },
-        toast: { // TODO: change (currently same as light)
+        toast: {
+            // TODO: change (currently same as light)
             style: {
                 backgroundColor: '#36454f',
                 color: '#c7c9d5',
@@ -43,7 +44,7 @@ export default function getDarkTheme(): DefaultTheme {
                     borderWidth: 2,
                     borderColor: '#61d345',
                     borderStyle: 'solid',
-                }
+                },
             },
         },
     });

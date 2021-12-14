@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-const Button = styled.button(props => ({
+const Button = styled.button((props) => ({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
@@ -16,14 +16,14 @@ const Button = styled.button(props => ({
     backgroundColor: props.theme.button?.backgroundColor,
     borderColor: props.theme.button?.borderColor,
     color: props.theme.button?.color,
-    ":focus": {
+    ':focus': {
         boxShadow: props.theme.common?.focus?.boxShadow,
     },
     // TODO: maybe just this but in themes
-    ":hover": {
+    ':hover': {
         filter: 'brightness(115%)',
     },
-    ":not(:disabled):active": {
+    ':not(:disabled):active': {
         filter: 'brightness(130%)',
     },
     // ":hover": {
@@ -33,9 +33,9 @@ const Button = styled.button(props => ({
     //     filter: 'brightness(70%)',
     // },
     // TODO: theme
-    ":disabled": {
+    ':disabled': {
         filter: 'saturate(0)',
-    }
+    },
 }));
 
 export default Button;

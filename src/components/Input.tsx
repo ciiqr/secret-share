@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-const Input = styled.input(props => ({
+const Input = styled.input((props) => ({
     borderWidth: 1,
     borderStyle: 'solid',
     borderRadius: 4,
@@ -10,14 +10,14 @@ const Input = styled.input(props => ({
 
     borderColor: props.theme.input?.borderColor,
     color: props.theme.input?.color,
-    "&[readonly]": {
+    '&[readonly]': {
         color: props.theme.input?.readonly?.color,
     },
-    ":focus": {
+    ':focus': {
         borderColor: props.theme.input?.focus?.borderColor,
         boxShadow: props.theme.common?.focus?.boxShadow,
     },
-    ":hover": {
+    ':hover': {
         backgroundColor: props.theme.input?.hover?.backgroundColor,
     },
 }));

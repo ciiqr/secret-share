@@ -1,7 +1,13 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
-import { TextArea, CopyableField, SendButton, Layout, Content } from 'components';
+import {
+    TextArea,
+    CopyableField,
+    SendButton,
+    Layout,
+    Content,
+} from 'components';
 import toast from 'react-hot-toast';
 import Bugout from 'bugout';
 
@@ -13,15 +19,21 @@ const StyledTextArea = styled(TextArea)({
 // TODO: refactor
 function useBugoutClient(serverAddress: string) {
     const [ready, setReady] = useState(false);
-    const [bugout] = useState<Bugout>(() =>
-        new Bugout(serverAddress, { announce: ["wss://tracker.openwebtorrent.com", "wss://tracker.btorrent.xyz"]})
+    const [bugout] = useState<Bugout>(
+        () =>
+            new Bugout(serverAddress, {
+                announce: [
+                    'wss://tracker.openwebtorrent.com',
+                    'wss://tracker.btorrent.xyz',
+                ],
+            }),
     );
 
     const address = bugout.address();
 
     useEffect(() => {
         // handle events
-        bugout.on("server", function() {
+        bugout.on('server', function () {
             setReady(true);
 
             // TODO: maybe show in some better way...
@@ -41,15 +53,15 @@ function useBugoutClient(serverAddress: string) {
 }
 
 function sendSecret(bugout: Bugout, secret: string) {
-    bugout.rpc("shareSecret", {secret}, function(result: unknown) {
+    bugout.rpc('shareSecret', { secret }, function (result: unknown) {
         // TODO: if server responds positively (result.success), disconnect
         // TODO: check result.error too?
         // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-        console.log(61, {result});
+        console.log(61, { result });
     });
 
     // TODO: toast conditional on result
-    toast.success('Secret shared!')
+    toast.success('Secret shared!');
 }
 
 // TODO: add a loading indicator for sending
@@ -64,8 +76,14 @@ export default function SenderPage() {
             <Content>
                 <CopyableField value={window.location.href} />
                 {/* TODO: would be nice if text area could be hidden while typing... */}
-                <StyledTextArea value={secret} onChange={e => setSecret(e.target.value)} />
-                <SendButton disabled={!ready} onClick={() => sendSecret(bugout, secret)} />
+                <StyledTextArea
+                    value={secret}
+                    onChange={(e) => setSecret(e.target.value)}
+                />
+                <SendButton
+                    disabled={!ready}
+                    onClick={() => sendSecret(bugout, secret)}
+                />
             </Content>
         </Layout>
     );

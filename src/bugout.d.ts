@@ -42,7 +42,12 @@ declare class Bugout extends EventEmitter {
     ping(): void;
     send(address: any, message: any): void;
     register(call: any, fn: fn, docstring?: any): void;
-    rpc(address: any, call: ((...any: any[]) => any) | any, args?: any, callback?: Callback): void;
+    rpc(
+        address: any,
+        call: ((...any: any[]) => any) | any,
+        args?: any,
+        callback?: Callback,
+    ): void;
 
     // TODO: why isn't this inherited from event emitter...
     on(event: string, listener: (...args: any[]) => any): this;

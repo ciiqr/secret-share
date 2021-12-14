@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 type ColorScheme = 'light' | 'dark';
 
 type Return = {
-  colorScheme: ColorScheme,
+    colorScheme: ColorScheme;
 };
 
 export default function useColorScheme(): Return {
@@ -11,7 +11,7 @@ export default function useColorScheme(): Return {
 
     // TODO: support/persist manual toggle...
     const [colorScheme, setColorScheme] = useState<ColorScheme>(
-        mediaQuery.matches ? 'dark' : 'light'
+        mediaQuery.matches ? 'dark' : 'light',
     );
 
     useEffect(() => {

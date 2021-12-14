@@ -6,32 +6,32 @@ import 'react-hot-toast';
 declare module 'styled-components' {
     export interface DefaultTheme {
         spacing?: {
-            default?: number|string
-        }
-        backgroundColor?: string
+            default?: number | string;
+        };
+        backgroundColor?: string;
         common?: {
             focus?: {
-                boxShadow?: string
-            }
-        }
+                boxShadow?: string;
+            };
+        };
         button?: {
-            backgroundColor?: string
-            borderColor?: string
-            color?: string
-        }
+            backgroundColor?: string;
+            borderColor?: string;
+            color?: string;
+        };
         input?: {
-            borderColor?: string
-            color?: string
+            borderColor?: string;
+            color?: string;
             readonly?: {
-                color?: string
-            }
+                color?: string;
+            };
             focus?: {
-                borderColor?: string
-            }
+                borderColor?: string;
+            };
             hover?: {
-                backgroundColor?: string
-            }
-        }
-        toast?: DefaultToastOptions
+                backgroundColor?: string;
+            };
+        };
+        toast?: DefaultToastOptions;
     }
 }
