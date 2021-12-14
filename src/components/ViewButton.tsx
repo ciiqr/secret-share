@@ -1,10 +1,11 @@
 import { faEyeSlash, faEye } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { MouseEventHandler } from 'react';
 import Button from './Button';
 
 type ViewButtonProps = {
     visible: boolean;
-    onClick: (a: object) => void;
+    onClick: MouseEventHandler<HTMLButtonElement>;
 };
 
 export default function ViewButton({ visible, onClick }: ViewButtonProps) {
