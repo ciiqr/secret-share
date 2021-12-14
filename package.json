@@ -19,8 +19,11 @@
         "@types/react-dom": "^17.0.11",
         "@types/react-router-dom": "^5.3.2",
         "@types/styled-components": "^5.1.17",
+        "@typescript-eslint/eslint-plugin": "^5.7.0",
+        "@typescript-eslint/parser": "^5.7.0",
         "bugout": "0.0.12",
         "deepmerge": "^4.2.2",
+        "eslint": "^7.32.0",
         "ghspa": "^1.0.0",
         "qrcode.react": "^1.0.1",
         "react": "^17.0.2",
@@ -47,6 +50,7 @@
         "test:watch": "react-scripts test --coverage --watchAll",
         "test:debug": "react-scripts --inspect-brk test --runInBand --no-cache",
         "lint": "eslint --ext js,ts,tsx src",
+        "lint:fix": "eslint --ext js,ts,tsx src --fix",
         "eject": "react-scripts eject"
     },
     "eslintConfig": {
