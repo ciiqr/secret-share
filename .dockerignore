@@ -1,4 +1,9 @@
-/node_modules
-/build
-/.git
-/.github
+# Ignore everything
+*
+
+# Allow specific required files/directories
+!/package*.json
+!/tsconfig.json
+!/nginx.conf
+!/src/**
+!/public/**
