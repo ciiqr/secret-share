@@ -16,6 +16,9 @@ module.exports = {
         'import/no-anonymous-default-export': 'off',
         // TODO: revert once we type bugout proper
         '@typescript-eslint/no-unsafe-assignment': 'off',
+        '@typescript-eslint/no-unsafe-call': 'off',
+        '@typescript-eslint/no-unsafe-member-access': 'off',
+        '@typescript-eslint/no-unsafe-return': 'off',
     },
 };
 

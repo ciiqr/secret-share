@@ -36,9 +36,7 @@ function useBugoutServer({
             'shareSecret',
             (address, args: Record<string, string>, cb) => {
                 const { secret } = args;
-                // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
                 const success = onSecretReceived(secret);
-                // eslint-disable-next-line @typescript-eslint/no-unsafe-call
                 cb({ success });
             },
         );
