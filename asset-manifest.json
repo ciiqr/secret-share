@@ -6,18 +6,18 @@
     "runtime-main.js": "/secret-share/static/js/runtime-main.d9e3f0d1.js",
     "runtime-main.js.map": "/secret-share/static/js/runtime-main.d9e3f0d1.js.map",
     "static/css/2.44350e51.chunk.css": "/secret-share/static/css/2.44350e51.chunk.css",
-    "static/js/2.24da472f.chunk.js": "/secret-share/static/js/2.24da472f.chunk.js",
-    "static/js/2.24da472f.chunk.js.map": "/secret-share/static/js/2.24da472f.chunk.js.map",
+    "static/js/2.625fc99e.chunk.js": "/secret-share/static/js/2.625fc99e.chunk.js",
+    "static/js/2.625fc99e.chunk.js.map": "/secret-share/static/js/2.625fc99e.chunk.js.map",
     "index.html": "/secret-share/index.html",
     "static/css/2.44350e51.chunk.css.map": "/secret-share/static/css/2.44350e51.chunk.css.map",
     "static/css/main.4547760b.chunk.css.map": "/secret-share/static/css/main.4547760b.chunk.css.map",
-    "static/js/2.24da472f.chunk.js.LICENSE.txt": "/secret-share/static/js/2.24da472f.chunk.js.LICENSE.txt",
+    "static/js/2.625fc99e.chunk.js.LICENSE.txt": "/secret-share/static/js/2.625fc99e.chunk.js.LICENSE.txt",
     "static/media/index.css": "/secret-share/static/media/roboto-mono-vietnamese-400-normal.baa5de8f.woff2"
   },
   "entrypoints": [
     "static/js/runtime-main.d9e3f0d1.js",
     "static/css/2.44350e51.chunk.css",
-    "static/js/2.24da472f.chunk.js",
+    "static/js/2.625fc99e.chunk.js",
     "static/css/main.4547760b.chunk.css",
     "static/js/main.6d1961cd.chunk.js"
   ]
