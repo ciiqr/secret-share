@@ -1,7 +1,0 @@
-bracketSpacing: true
-semi: true
-singleQuote: true
-trailingComma: all
-printWidth: 80
-# TODO: https://prettier.io/docs/en/precommit.html#option-1-lint-stagedhttpsgithubcomokonetlint-staged
-# TODO: https://prettier.io/docs/en/options.html
