@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { CSSProperties } from "react";
+import type { CSSProperties } from "react";
 
 type RowProps = {
     // TODO: why isn't CSSProperties strict?

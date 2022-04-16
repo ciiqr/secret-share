@@ -51,7 +51,7 @@
         "test": "react-scripts test --coverage --watchAll=false",
         "test:watch": "react-scripts test --coverage --watchAll",
         "test:debug": "react-scripts --inspect-brk test --runInBand --no-cache",
-        "lint": "eslint --ext js,ts,tsx src && prettier --check .",
+        "lint": "tsc && eslint --ext js,ts,tsx src && prettier --check .",
         "lint:fix": "eslint --ext js,ts,tsx src --fix && prettier --check --write .",
         "eject": "react-scripts eject"
     },
@@ -68,6 +68,7 @@
         ]
     },
     "devDependencies": {
-        "@pentible/prettier": "0.6.0"
+        "@pentible/prettier": "0.7.0",
+        "@pentible/tsconfig": "0.7.0"
     }
 }

@@ -1,4 +1,4 @@
-import { DefaultTheme } from "styled-components";
+import type { DefaultTheme } from "styled-components";
 import getBaseTheme from "./getBaseTheme";
 import mergeThemes from "./mergeThemes";
 

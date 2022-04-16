@@ -34,10 +34,12 @@ function useBugoutServer({
         // register rpc calls clients can use
         bugout.register(
             "shareSecret",
-            (address, args: Record<string, string>, cb) => {
+            (_address, args: Record<string, string>, cb) => {
                 const { secret } = args;
-                const success = onSecretReceived(secret);
-                cb({ success });
+                if (secret) {
+                    const success = onSecretReceived(secret);
+                    cb({ success });
+                }
             },
         );
 

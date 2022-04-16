@@ -1,6 +1,6 @@
 import { faEyeSlash, faEye } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { MouseEventHandler } from "react";
+import type { MouseEventHandler } from "react";
 import Button from "./Button";
 
 type ViewButtonProps = {
