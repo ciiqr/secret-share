@@ -12,7 +12,7 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v2
         with:
-          node-version: '16'
+          node-version: "16"
       - name: Install dependencies
         run: npm install
       - name: Build
@@ -22,7 +22,9 @@ jobs:
           PUBLIC_URL: /secret-share
       - name: Setup 404 as index
         # TODO: if we eject maytbe we can make this automatic with webpack
-        run: sed -E 's@<title>Secret Share</title>@<title>404</title>@g' <build/index.html >build/404.html
+        run:
+          sed -E 's@<title>Secret Share</title>@<title>404</title>@g'
+          <build/index.html >build/404.html
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:

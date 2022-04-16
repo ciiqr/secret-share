@@ -1,22 +1,22 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const TextArea = styled.textarea((props) => ({
     borderWidth: 1,
-    borderStyle: 'solid',
+    borderStyle: "solid",
     borderRadius: 4,
-    padding: '8px 16px',
-    lineHeight: '1.5',
+    padding: "8px 16px",
+    lineHeight: "1.5",
 
     borderColor: props.theme.input?.borderColor,
     color: props.theme.input?.color,
-    '&[readonly]': {
+    "&[readonly]": {
         color: props.theme.input?.readonly?.color,
     },
-    ':focus': {
+    ":focus": {
         borderColor: props.theme.input?.focus?.borderColor,
         boxShadow: props.theme.common?.focus?.boxShadow,
     },
-    ':hover': {
+    ":hover": {
         backgroundColor: props.theme.input?.hover?.backgroundColor,
     },
 }));

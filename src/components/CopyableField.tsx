@@ -1,9 +1,9 @@
-import styled from 'styled-components';
-import { Row, CopyButton, Input } from 'components';
+import styled from "styled-components";
+import { Row, CopyButton, Input } from "components";
 
 const ReadOnlyInput = styled(Input).attrs({
     readOnly: true,
-    type: 'text',
+    type: "text",
 })({});
 
 type CopyableFieldProps = {

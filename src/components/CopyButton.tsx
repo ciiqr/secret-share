@@ -1,7 +1,7 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCopy } from '@fortawesome/free-solid-svg-icons';
-import { Button } from 'components';
-import toast from 'react-hot-toast';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCopy } from "@fortawesome/free-solid-svg-icons";
+import { Button } from "components";
+import toast from "react-hot-toast";
 
 async function copyToClipboard(value: string, message: string) {
     // TODO: cleanup code...
@@ -11,18 +11,18 @@ async function copyToClipboard(value: string, message: string) {
         await navigator.clipboard.writeText(value);
     } else {
         // text area method
-        const textArea = document.createElement('textarea');
+        const textArea = document.createElement("textarea");
         textArea.value = value;
         // make the textarea out of viewport
-        textArea.style.position = 'fixed';
-        textArea.style.left = '-999999px';
-        textArea.style.top = '-999999px';
+        textArea.style.position = "fixed";
+        textArea.style.left = "-999999px";
+        textArea.style.top = "-999999px";
         document.body.appendChild(textArea);
         textArea.focus();
         textArea.select();
         await new Promise<void>((res, rej) => {
             // here the magic happens
-            document.execCommand('copy') ? res() : rej();
+            document.execCommand("copy") ? res() : rej();
             textArea.remove();
         });
     }
@@ -37,7 +37,7 @@ type CopyButtonProps = {
 };
 
 export default function CopyButton({ value, message }: CopyButtonProps) {
-    const msg = message || 'Copied!';
+    const msg = message || "Copied!";
 
     return (
         <Button onClick={() => copyToClipboard(value, msg)}>

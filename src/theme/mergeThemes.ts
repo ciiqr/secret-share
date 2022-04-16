@@ -1,5 +1,5 @@
-import merge from 'deepmerge';
-import { DefaultTheme } from 'styled-components';
+import merge from "deepmerge";
+import { DefaultTheme } from "styled-components";
 
 export default function mergeThemes(
     baseTheme: DefaultTheme,

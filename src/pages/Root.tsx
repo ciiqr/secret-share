@@ -1,6 +1,6 @@
-import { Route, Routes } from 'react-router-dom';
-import RequesterPage from 'pages/Requester';
-import SenderPage from 'pages/Sender';
+import { Route, Routes } from "react-router-dom";
+import RequesterPage from "pages/Requester";
+import SenderPage from "pages/Sender";
 
 export default function RootPage() {
     return (

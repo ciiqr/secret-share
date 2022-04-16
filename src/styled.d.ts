@@ -1,9 +1,9 @@
-import 'styled-components';
-import 'react-hot-toast';
+import "styled-components";
+import "react-hot-toast";
 // TODO: figure out stricter typing...
 // import { CSSProperties } from 'react';
 
-declare module 'styled-components' {
+declare module "styled-components" {
     export interface DefaultTheme {
         spacing?: {
             default?: number | string;

@@ -1,4 +1,4 @@
-version: '3.6'
+version: "3.6"
 services:
   web:
     build:
@@ -7,7 +7,7 @@ services:
       # args:
       #   PUBLIC_URL: /secret
     ports:
-      - '80:80'
+      - "80:80"
     volumes:
-      - './src:/var/app/src:delegated'
-      - './public:/var/app/public:delegated'
+      - "./src:/var/app/src:delegated"
+      - "./public:/var/app/public:delegated"

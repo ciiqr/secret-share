@@ -3,6 +3,6 @@ export default class DomHelper {
         const baseUrl = new URL(document.baseURI);
         const pathname = baseUrl.pathname;
 
-        return pathname.replace(/\/$/, '');
+        return pathname.replace(/\/$/, "");
     }
 }

@@ -1,16 +1,16 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import 'the-new-css-reset/css/reset.css';
-import '@fontsource/roboto-mono';
-import 'index.css';
-import App from 'components/App';
-import * as serviceWorker from 'serviceWorker';
-import { BrowserRouter } from 'react-router-dom';
-import DomHelper from 'helpers/Dom';
-import 'ghspa';
+import React from "react";
+import ReactDOM from "react-dom";
+import "the-new-css-reset/css/reset.css";
+import "@fontsource/roboto-mono";
+import "index.css";
+import App from "components/App";
+import * as serviceWorker from "serviceWorker";
+import { BrowserRouter } from "react-router-dom";
+import DomHelper from "helpers/Dom";
+import "ghspa";
 
 const base = DomHelper.getBasePath();
-const root = document.getElementById('root');
+const root = document.getElementById("root");
 
 ReactDOM.render(
     <React.StrictMode>

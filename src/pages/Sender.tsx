@@ -1,19 +1,19 @@
-import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import styled from 'styled-components';
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import styled from "styled-components";
 import {
     TextArea,
     CopyableField,
     SendButton,
     Layout,
     Content,
-} from 'components';
-import toast from 'react-hot-toast';
-import Bugout from 'bugout';
+} from "components";
+import toast from "react-hot-toast";
+import Bugout from "bugout";
 
 const StyledTextArea = styled(TextArea)({
     height: 200,
-    resize: 'none',
+    resize: "none",
 });
 
 // TODO: refactor
@@ -23,8 +23,8 @@ function useBugoutClient(serverAddress: string) {
         () =>
             new Bugout(serverAddress, {
                 announce: [
-                    'wss://tracker.openwebtorrent.com',
-                    'wss://tracker.btorrent.xyz',
+                    "wss://tracker.openwebtorrent.com",
+                    "wss://tracker.btorrent.xyz",
                 ],
             }),
     );
@@ -33,11 +33,11 @@ function useBugoutClient(serverAddress: string) {
 
     useEffect(() => {
         // handle events
-        bugout.on('server', function () {
+        bugout.on("server", function () {
             setReady(true);
 
             // TODO: maybe show in some better way...
-            toast.success('Connected!');
+            toast.success("Connected!");
         });
 
         return () => {
@@ -53,22 +53,22 @@ function useBugoutClient(serverAddress: string) {
 }
 
 function sendSecret(bugout: Bugout, secret: string) {
-    bugout.rpc('shareSecret', { secret }, function (result: unknown) {
+    bugout.rpc("shareSecret", { secret }, function (result: unknown) {
         // TODO: if server responds positively (result.success), disconnect
         // TODO: check result.error too?
         console.log(61, { result });
     });
 
     // TODO: toast conditional on result
-    toast.success('Secret shared!');
+    toast.success("Secret shared!");
 }
 
 // TODO: add a loading indicator for sending
 // TODO: add an indicator for whether we're connected
 export default function SenderPage() {
     const { address } = useParams();
-    const [secret, setSecret] = useState('');
-    const { bugout, ready } = useBugoutClient(address ?? '');
+    const [secret, setSecret] = useState("");
+    const { bugout, ready } = useBugoutClient(address ?? "");
 
     return (
         <Layout>

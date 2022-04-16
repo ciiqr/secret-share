@@ -4,11 +4,11 @@ import {
     SecretInput,
     Layout,
     Content,
-} from 'components';
-import UrlHelper from 'helpers/Url';
-import { useState, useEffect } from 'react';
-import Bugout from 'bugout';
-import toast from 'react-hot-toast';
+} from "components";
+import UrlHelper from "helpers/Url";
+import { useState, useEffect } from "react";
+import Bugout from "bugout";
+import toast from "react-hot-toast";
 
 // TODO: cleanup
 type OnSecretReceived = (secret: string) => boolean;
@@ -22,8 +22,8 @@ function useBugoutServer({
         () =>
             new Bugout({
                 announce: [
-                    'wss://tracker.openwebtorrent.com',
-                    'wss://tracker.btorrent.xyz',
+                    "wss://tracker.openwebtorrent.com",
+                    "wss://tracker.btorrent.xyz",
                 ],
             }),
     );
@@ -33,7 +33,7 @@ function useBugoutServer({
     useEffect(() => {
         // register rpc calls clients can use
         bugout.register(
-            'shareSecret',
+            "shareSecret",
             (address, args: Record<string, string>, cb) => {
                 const { secret } = args;
                 const success = onSecretReceived(secret);
@@ -75,12 +75,12 @@ function useBugoutServer({
 
 // TODO: consider some sort of loading/ready indicator
 export default function RequesterPage() {
-    const [secret, setSecret] = useState('');
+    const [secret, setSecret] = useState("");
     const { address } = useBugoutServer({
         onSecretReceived: (newSecret) => {
             setSecret(newSecret);
 
-            toast.success('Secret received!');
+            toast.success("Secret received!");
             // TODO: disconnect
             return true;
         },
