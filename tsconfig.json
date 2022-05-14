@@ -1,8 +1,10 @@
 {
     "extends": "@pentible/tsconfig",
     "compilerOptions": {
-        "baseUrl": "./src", // TODO: may not be required
-        "noEmit": true
+        "baseUrl": "./src",
+        "noEmit": true,
+        "lib": ["dom", "dom.iterable", "esnext"],
+        "resolveJsonModule": true
     },
-    "include": ["src"] // TODO: may not be required
+    "include": ["src"]
 }
