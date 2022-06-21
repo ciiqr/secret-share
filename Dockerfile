@@ -20,6 +20,7 @@ RUN npm ci --quiet --only=production
 FROM prereq as development
 
 COPY tsconfig.json ./
+COPY config-overrides.js ./
 
 RUN npm install --quiet
 
