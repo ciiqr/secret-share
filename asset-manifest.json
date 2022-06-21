@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/secret-share/static/css/main.0ba20f47.css",
-    "main.js": "/secret-share/static/js/main.0af81a6b.js",
+    "main.js": "/secret-share/static/js/main.4ea46a28.js",
     "static/media/roboto-mono-all-400-normal.woff": "/secret-share/static/media/roboto-mono-all-400-normal.8c12dec86f8b17eac652.woff",
     "static/media/roboto-mono-cyrillic-ext-400-normal.woff2": "/secret-share/static/media/roboto-mono-cyrillic-ext-400-normal.b60acdafdfd55591eddf.woff2",
     "static/media/roboto-mono-latin-400-normal.woff2": "/secret-share/static/media/roboto-mono-latin-400-normal.535bc89d4af715503b01.woff2",
@@ -11,10 +11,10 @@
     "static/media/roboto-mono-vietnamese-400-normal.woff2": "/secret-share/static/media/roboto-mono-vietnamese-400-normal.baa5de8fd025f9a570c0.woff2",
     "index.html": "/secret-share/index.html",
     "main.0ba20f47.css.map": "/secret-share/static/css/main.0ba20f47.css.map",
-    "main.0af81a6b.js.map": "/secret-share/static/js/main.0af81a6b.js.map"
+    "main.4ea46a28.js.map": "/secret-share/static/js/main.4ea46a28.js.map"
   },
   "entrypoints": [
     "static/css/main.0ba20f47.css",
-    "static/js/main.0af81a6b.js"
+    "static/js/main.4ea46a28.js"
   ]
 }
