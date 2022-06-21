@@ -1,11 +1,11 @@
-import styled from "styled-components";
 import type { CSSProperties } from "react";
+import styled from "styled-components";
 
-type ColumnProps = {
+interface ColumnProps {
     // TODO: why isn't CSSProperties strict?
     justifyContent?: CSSProperties["justifyContent"];
     gap?: CSSProperties["gap"];
-};
+}
 
 const Column = styled.div<ColumnProps>((props) => ({
     display: "flex",

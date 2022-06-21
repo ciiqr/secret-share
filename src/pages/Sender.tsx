@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
+import rntoast from "react-hot-toast";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
+import Bugout from "bugout";
 import {
     TextArea,
     CopyableField,
@@ -8,8 +10,6 @@ import {
     Layout,
     Content,
 } from "components";
-import toast from "react-hot-toast";
-import Bugout from "bugout";
 
 const StyledTextArea = styled(TextArea)({
     height: 200,
@@ -33,11 +33,11 @@ function useBugoutClient(serverAddress: string) {
 
     useEffect(() => {
         // handle events
-        bugout.on("server", function () {
+        bugout.on("server", () => {
             setReady(true);
 
             // TODO: maybe show in some better way...
-            toast.success("Connected!");
+            rntoast.success("Connected!");
         });
 
         return () => {
@@ -53,14 +53,15 @@ function useBugoutClient(serverAddress: string) {
 }
 
 function sendSecret(bugout: Bugout, secret: string) {
-    bugout.rpc("shareSecret", { secret }, function (result: unknown) {
+    // @ts-expect-error TODO: fix bugout types...
+    bugout.rpc("shareSecret", { secret }, (result: unknown) => {
         // TODO: if server responds positively (result.success), disconnect
         // TODO: check result.error too?
-        console.log(61, { result });
+        if ((result as { success?: boolean }).success) bugout.destroy();
     });
 
     // TODO: toast conditional on result
-    toast.success("Secret shared!");
+    rntoast.success("Secret shared!");
 }
 
 // TODO: add a loading indicator for sending

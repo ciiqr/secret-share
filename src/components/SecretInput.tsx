@@ -1,17 +1,17 @@
 import { useState } from "react";
+import styled from "styled-components";
 import { Column, Row, CopyButton, ViewButton } from "components";
 import TextArea from "components/TextArea"; // TODO: why is this sometimes undefined when included through the index...
-import styled from "styled-components";
 
 const StyledTextArea = styled(TextArea)({
     height: 200,
     resize: "none",
 });
 
-type SecretInputProps = {
+interface SecretInputProps {
     className?: string;
     value: string;
-};
+}
 
 export default function SecretInput({ className, value }: SecretInputProps) {
     const [visible, setVisible] = useState(false);

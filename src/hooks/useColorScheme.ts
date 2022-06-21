@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 
-type ColorScheme = "light" | "dark";
+type ColorScheme = "dark" | "light";
 
-type Return = {
+interface Return {
     colorScheme: ColorScheme;
-};
+}
 
 export default function useColorScheme(): Return {
     const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
@@ -16,9 +16,9 @@ export default function useColorScheme(): Return {
 
     useEffect(() => {
         // TODO: don't need to listen if the user has set their preference
-        const listener = (e: MediaQueryListEvent) => {
+        function listener(e: MediaQueryListEvent) {
             setColorScheme(e.matches ? "dark" : "light");
-        };
+        }
 
         mediaQuery.addEventListener("change", listener);
 

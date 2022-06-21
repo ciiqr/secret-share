@@ -3,10 +3,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import type { MouseEventHandler } from "react";
 import Button from "./Button";
 
-type ViewButtonProps = {
+interface ViewButtonProps {
     visible: boolean;
     onClick: MouseEventHandler<HTMLButtonElement>;
-};
+}
 
 export default function ViewButton({ visible, onClick }: ViewButtonProps) {
     return (

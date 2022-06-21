@@ -1,7 +1,7 @@
-import Theme from "theme/Theme";
-import ToastContainer from "components/ToastContainer";
 import Background from "components/Background";
+import ToastContainer from "components/ToastContainer";
 import RootPage from "pages/Root";
+import Theme from "theme/Theme";
 
 export default function App() {
     return (

@@ -3,10 +3,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import type { MouseEventHandler } from "react";
 import Button from "./Button";
 
-type SendButtonProps = {
+interface SendButtonProps {
     onClick: MouseEventHandler<HTMLButtonElement>;
     disabled?: boolean;
-};
+}
 
 export default function SendButton({ onClick, disabled }: SendButtonProps) {
     return (

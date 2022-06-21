@@ -1,3 +1,6 @@
+import { useState, useEffect } from "react";
+import rntoast from "react-hot-toast";
+import Bugout from "bugout";
 import {
     QrCode,
     CopyableField,
@@ -5,10 +8,7 @@ import {
     Layout,
     Content,
 } from "components";
-import UrlHelper from "helpers/Url";
-import { useState, useEffect } from "react";
-import Bugout from "bugout";
-import toast from "react-hot-toast";
+import { absoluteUrl } from "helpers/Url";
 
 // TODO: cleanup
 type OnSecretReceived = (secret: string) => boolean;
@@ -46,7 +46,7 @@ function useBugoutServer({
         // TODO: connections are weird, probs just not worth relying on for this
         // handle events
         // bugout.on("seen", (peerAddress) => {
-        //     toast.success('Connected!');
+        //     rntoast.success('Connected!');
         // });
         // bugout.on("connections", (c) => {
         //     // if (c === 0) {
@@ -55,7 +55,7 @@ function useBugoutServer({
 
         //     // TODO: maybe show in some better way...
         //     // if (c === 1) {
-        //     //     toast.success('Connected!');
+        //     //     rntoast.success('Connected!');
         //     // }
         // });
 
@@ -79,15 +79,15 @@ function useBugoutServer({
 export default function RequesterPage() {
     const [secret, setSecret] = useState("");
     const { address } = useBugoutServer({
-        onSecretReceived: (newSecret) => {
+        onSecretReceived(newSecret) {
             setSecret(newSecret);
 
-            toast.success("Secret received!");
+            rntoast.success("Secret received!");
             // TODO: disconnect
             return true;
         },
     });
-    const url = UrlHelper.absolute(`/${address}`);
+    const url = absoluteUrl(`/${address}`);
 
     return (
         <Layout>

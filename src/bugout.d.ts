@@ -3,12 +3,12 @@ export = Bugout;
 type EventEmitter = events.EventEmitter;
 
 /**
- * Multi-party data channels on WebTorrent extension.
+ * multi-party data channels on WebTorrent extension.
  */
 // declare function Bugout(identifier?: any, opts?: any): Bugout;
 declare class Bugout extends EventEmitter {
     /**
-     * Multi-party data channels on WebTorrent extension.
+     * multi-party data channels on WebTorrent extension.
      */
     constructor(identifier?: any, opts?: any);
     announce: any;
@@ -44,7 +44,7 @@ declare class Bugout extends EventEmitter {
     register(call: any, fn: fn, docstring?: any): void;
     rpc(
         address: any,
-        call: ((...any: any[]) => any) | any,
+        call: (...any: any[]) => any,
         args?: any,
         callback?: Callback,
     ): void;

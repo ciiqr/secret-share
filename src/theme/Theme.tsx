@@ -1,6 +1,6 @@
 import type { PropsWithChildren } from "react";
-import useColorScheme from "hooks/useColorScheme";
 import { ThemeProvider } from "styled-components";
+import useColorScheme from "hooks/useColorScheme";
 import getDarkTheme from "theme/getDarkTheme";
 import getLightTheme from "theme/getLightTheme";
 

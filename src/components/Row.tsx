@@ -1,11 +1,11 @@
-import styled from "styled-components";
 import type { CSSProperties } from "react";
+import styled from "styled-components";
 
-type RowProps = {
+interface RowProps {
     // TODO: why isn't CSSProperties strict?
     justifyContent?: CSSProperties["justifyContent"];
     gap?: CSSProperties["gap"];
-};
+}
 
 const Row = styled.div<RowProps>((props) => ({
     display: "flex",

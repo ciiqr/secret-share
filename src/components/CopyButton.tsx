@@ -1,7 +1,7 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCopy } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import rntoast from "react-hot-toast";
 import { Button } from "components";
-import toast from "react-hot-toast";
 
 async function copyToClipboard(value: string, message: string) {
     // TODO: cleanup code...
@@ -22,25 +22,26 @@ async function copyToClipboard(value: string, message: string) {
         textArea.select();
         await new Promise<void>((res, rej) => {
             // here the magic happens
-            document.execCommand("copy") ? res() : rej();
+            if (document.execCommand("copy")) res();
+            else rej(new Error("copyToClipboard exec copy failed"));
             textArea.remove();
         });
     }
 
     // TODO: fix so it depends on status
-    toast.success(message);
+    rntoast.success(message);
 }
 
-type CopyButtonProps = {
+interface CopyButtonProps {
     value: string;
     message?: string;
-};
+}
 
 export default function CopyButton({ value, message }: CopyButtonProps) {
-    const msg = message || "Copied!";
+    const msg = (message ?? "") || "Copied!";
 
     return (
-        <Button onClick={() => copyToClipboard(value, msg)}>
+        <Button onClick={() => void copyToClipboard(value, msg)}>
             <FontAwesomeIcon fixedWidth icon={faCopy} />
         </Button>
     );

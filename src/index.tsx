@@ -1,18 +1,17 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { render } from "react-dom";
+import { BrowserRouter } from "react-router-dom";
+import App from "components/App";
+import { getBasePath } from "helpers/Dom";
 import "the-new-css-reset/css/reset.css";
 import "@fontsource/roboto-mono";
 import "index.css";
-import App from "components/App";
-import * as serviceWorker from "serviceWorker";
-import { BrowserRouter } from "react-router-dom";
-import DomHelper from "helpers/Dom";
 import "ghspa";
 
-const base = DomHelper.getBasePath();
+const base = getBasePath();
 const root = document.getElementById("root");
 
-ReactDOM.render(
+render(
     <React.StrictMode>
         <BrowserRouter basename={base}>
             <App />
@@ -20,8 +19,3 @@ ReactDOM.render(
     </React.StrictMode>,
     root,
 );
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();

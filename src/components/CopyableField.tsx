@@ -6,10 +6,10 @@ const ReadOnlyInput = styled(Input).attrs({
     type: "text",
 })({});
 
-type CopyableFieldProps = {
+interface CopyableFieldProps {
     value: string;
     message?: string;
-};
+}
 
 export default function CopyableField({ value, message }: CopyableFieldProps) {
     return (
