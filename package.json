@@ -5,8 +5,8 @@
     "homepage": "",
     "license": "MIT",
     "scripts": {
-        "build": "react-scripts build",
-        "debug": "react-scripts start",
+        "build": "react-app-rewired build",
+        "debug": "react-app-rewired start",
         "dev:debug": "npm run dev:stop && npm run dev:start && npm run dev:logs",
         "dev:logs": "docker-compose logs -f web",
         "dev:start": "docker-compose up -d --build --remove-orphans",
@@ -14,13 +14,13 @@
         "dev:test": "docker-compose run web npm test",
         "dev:test:watch": "docker-compose run web npm run test:watch",
         "dev:view:coverage": "echo 'TODO: web coverage' && exit 1 && docker-compose run -p 5000:5000 web npm run view:coverage",
-        "eject": "react-scripts eject",
+        "eject": "react-app-rewired eject",
         "lint": "tsc && eslint --ext js,ts,tsx src && prettier --check .",
         "lint:fix": "eslint --ext js,ts,tsx src --fix && prettier --check --write .",
-        "start": "react-scripts start",
-        "test": "react-scripts test --coverage --watchAll=false",
-        "test:debug": "react-scripts --inspect-brk test --runInBand --no-cache",
-        "test:watch": "react-scripts test --coverage --watchAll"
+        "start": "react-app-rewired start",
+        "test": "react-app-rewired test --coverage --watchAll=false",
+        "test:debug": "react-app-rewired --inspect-brk test --runInBand --no-cache",
+        "test:watch": "react-app-rewired test --coverage --watchAll"
     },
     "browserslist": {
         "production": [
@@ -51,24 +51,37 @@
         "@types/styled-components": "^5.1.17",
         "@typescript-eslint/eslint-plugin": "^5.7.0",
         "@typescript-eslint/parser": "^5.7.0",
+        "browserify-fs": "1.0.0",
+        "buffer": "6.0.3",
         "bugout": "0.0.12",
+        "crypto": "npm:crypto-browserify",
         "deepmerge": "^4.2.2",
         "eslint": "^7.32.0",
         "eslint-config-prettier": "^8.3.0",
         "ghspa": "^1.0.0",
+        "http": "npm:stream-http",
+        "https": "npm:https-browserify",
+        "path": "npm:path-browserify",
         "prettier": "^2.5.1",
+        "process": "0.11.10",
         "qrcode.react": "^1.0.1",
+        "querystring": "npm:querystring-es3",
         "react": "^17.0.2",
         "react-dom": "^17.0.2",
         "react-hot-toast": "^2.1.1",
         "react-router-dom": "^6.1.1",
-        "react-scripts": "^4.0.3",
+        "react-scripts": "5.0.1",
+        "stream": "npm:stream-browserify",
         "styled-components": "^5.3.3",
         "the-new-css-reset": "^1.4.2",
-        "typescript": "^4.5.3"
+        "typescript": "^4.5.3",
+        "url": "0.11.0"
     },
     "devDependencies": {
         "@pentible/prettier": "0.8.0",
-        "@pentible/tsconfig": "0.7.0"
+        "@pentible/tsconfig": "0.7.0",
+        "node-polyfill-webpack-plugin": "1.1.4",
+        "react-app-alias-ex": "2.1.0",
+        "react-app-rewired": "2.2.1"
     }
 }
