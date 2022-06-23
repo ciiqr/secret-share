@@ -10,6 +10,33 @@ rules:
 overrides:
   # TODO: revert once we type bugout proper
   - files:
-    - "bugout.d.ts"
+      - "bugout.d.ts"
     rules:
       "@typescript-eslint/no-explicit-any": "off"
+      "@typescript-eslint/naming-convention": "off"
+  - files:
+      - "*.tsx"
+    rules:
+      "@typescript-eslint/naming-convention":
+        - "error"
+        # default
+        - selector: "default"
+          format: ["strictCamelCase"]
+          leadingUnderscore: "forbid"
+          trailingUnderscore: "forbid"
+        # unused variable
+        - selector: "variableLike"
+          modifiers: ["unused"]
+          format: ["strictCamelCase"]
+          leadingUnderscore: "require"
+        # quoted properties on object literals (to ease interfacing with external code)
+        - selector: "objectLiteralProperty"
+          modifiers: ["requiresQuotes"]
+          format: null
+        # types & enum members
+        - selector: ["typeLike", "enumMember"]
+          format: ["StrictPascalCase"]
+        # react components / styled components
+        - selector: ["function", "variable"]
+          # modifiers: ["exported"]
+          format: ["strictCamelCase", "StrictPascalCase"]

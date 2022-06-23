@@ -78,9 +78,9 @@
         "url": "0.11.0"
     },
     "devDependencies": {
-        "@pentible/eslint-config": "0.23.0",
-        "@pentible/prettier": "0.23.0",
-        "@pentible/tsconfig": "0.23.0",
+        "@pentible/eslint-config": "0.24.0",
+        "@pentible/prettier": "0.24.0",
+        "@pentible/tsconfig": "0.24.0",
         "node-polyfill-webpack-plugin": "1.1.4",
         "react-app-alias-ex": "2.1.0",
         "react-app-rewired": "2.2.1"
