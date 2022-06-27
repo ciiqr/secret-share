@@ -1,5 +1,6 @@
 import { faCopy } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useCallback } from "react";
 import rntoast from "react-hot-toast";
 import { Button } from "components";
 
@@ -40,8 +41,12 @@ interface CopyButtonProps {
 export default function CopyButton({ value, message }: CopyButtonProps) {
     const msg = (message ?? "") || "Copied!";
 
+    const onClickCopyToClipboard = useCallback(() => {
+        void copyToClipboard(value, msg);
+    }, [msg, value]);
+
     return (
-        <Button onClick={() => void copyToClipboard(value, msg)}>
+        <Button onClick={onClickCopyToClipboard}>
             <FontAwesomeIcon fixedWidth icon={faCopy} />
         </Button>
     );

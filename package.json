@@ -18,21 +18,9 @@
         "lint": "tsc --noEmit && eslint . && prettier --check .",
         "lint:fix": "eslint --ext js,ts,tsx src --fix && prettier --check --write .",
         "start": "react-app-rewired start",
-        "test": "react-app-rewired test --coverage --watchAll=false",
+        "test": "react-app-rewired test --watchAll=false",
         "test:debug": "react-app-rewired --inspect-brk test --runInBand --no-cache",
-        "test:watch": "react-app-rewired test --coverage --watchAll"
-    },
-    "browserslist": {
-        "production": [
-            ">0.2%",
-            "not dead",
-            "not op_mini all"
-        ],
-        "development": [
-            "last 1 chrome version",
-            "last 1 firefox version",
-            "last 1 safari version"
-        ]
+        "test:watch": "react-app-rewired test --watchAll"
     },
     "dependencies": {
         "@fontsource/roboto-mono": "^4.5.0",
@@ -78,7 +66,9 @@
         "url": "0.11.0"
     },
     "devDependencies": {
-        "@pentible/eslint-config": "0.24.0",
+        "@pentible/eslint-config": "0.25.0",
+        "@pentible/eslint-config-react": "0.25.0",
+        "@pentible/eslint-config-web": "0.25.0",
         "@pentible/prettier": "0.24.0",
         "@pentible/tsconfig": "0.24.0",
         "node-polyfill-webpack-plugin": "1.1.4",

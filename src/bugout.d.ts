@@ -7,10 +7,6 @@ type EventEmitter = events.EventEmitter;
  */
 // declare function Bugout(identifier?: any, opts?: any): Bugout;
 declare class Bugout extends EventEmitter {
-    /**
-     * multi-party data channels on WebTorrent extension.
-     */
-    constructor(identifier?: any, opts?: any);
     announce: any;
     wt: any;
     nacl: any;
@@ -31,12 +27,16 @@ declare class Bugout extends EventEmitter {
     torrent: any;
     torrentCreated: boolean;
     WebTorrent: any;
-    _onTorrent(): void;
+    close: any;
+    /**
+     * multi-party data channels on WebTorrent extension.
+     */
+    constructor(identifier?: any, opts?: any);
+
     encodeseed(material: any): any;
     encodeaddress(material: any): string;
     heartbeat(interval: any): void;
     destroy(cb?: any): void;
-    close: any;
     connections(): any;
     address(pk?: any): string;
     ping(): void;
@@ -48,9 +48,9 @@ declare class Bugout extends EventEmitter {
         args?: any,
         callback?: Callback,
     ): void;
-
     // TODO: why isn't this inherited from event emitter...
     on(event: string, listener: (...args: any[]) => any): this;
+    _onTorrent(): void;
 }
 
 type Callback = (result: any) => any;

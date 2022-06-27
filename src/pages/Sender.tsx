@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import type { ChangeEvent } from "react";
+import { useState, useEffect, useMemo, useCallback } from "react";
 import rntoast from "react-hot-toast";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
@@ -19,7 +20,7 @@ const StyledTextArea = styled(TextArea)({
 // TODO: refactor
 function useBugoutClient(serverAddress: string) {
     const [ready, setReady] = useState(false);
-    const [bugout] = useState<Bugout>(
+    const bugout = useMemo(
         () =>
             new Bugout(serverAddress, {
                 announce: [
@@ -27,6 +28,7 @@ function useBugoutClient(serverAddress: string) {
                     "wss://tracker.btorrent.xyz",
                 ],
             }),
+        [serverAddress],
     );
 
     const address = bugout.address();
@@ -71,19 +73,23 @@ export default function SenderPage() {
     const [secret, setSecret] = useState("");
     const { bugout, ready } = useBugoutClient(address ?? "");
 
+    const onChangeSecret = useCallback(
+        (e: ChangeEvent<HTMLTextAreaElement>) => setSecret(e.target.value),
+        [],
+    );
+
+    const onClickSend = useCallback(
+        () => sendSecret(bugout, secret),
+        [bugout, secret],
+    );
+
     return (
         <Layout>
             <Content>
                 <CopyableField value={window.location.href} />
                 {/* TODO: would be nice if text area could be hidden while typing... */}
-                <StyledTextArea
-                    value={secret}
-                    onChange={(e) => setSecret(e.target.value)}
-                />
-                <SendButton
-                    disabled={!ready}
-                    onClick={() => sendSecret(bugout, secret)}
-                />
+                <StyledTextArea value={secret} onChange={onChangeSecret} />
+                <SendButton disabled={!ready} onClick={onClickSend} />
             </Content>
         </Layout>
     );

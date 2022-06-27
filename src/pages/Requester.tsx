@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import rntoast from "react-hot-toast";
 import Bugout from "bugout";
 import {
@@ -18,7 +18,7 @@ function useBugoutServer({
     onSecretReceived: OnSecretReceived;
 }) {
     // const [ready, setReady] = useState(false);
-    const [bugout] = useState<Bugout>(
+    const bugout = useMemo(
         () =>
             new Bugout({
                 announce: [
@@ -26,6 +26,7 @@ function useBugoutServer({
                     "wss://tracker.btorrent.xyz",
                 ],
             }),
+        [],
     );
 
     const address = bugout.address();

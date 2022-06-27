@@ -1,0 +1,4 @@
+# https://browserslist.dev/?q=ZGVmYXVsdHMsIG5vdCBJRSAxMSwgbm90IG9wX21pbmkgYWxs
+defaults
+not IE 11
+not op_mini all
