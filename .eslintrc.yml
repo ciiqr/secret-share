@@ -3,6 +3,7 @@ extends:
   - "@pentible/eslint-config"
   - "@pentible/eslint-config-web"
   - "@pentible/eslint-config-react"
+  - "@pentible/eslint-config-prettier"
 rules:
   # TODO: revert once we type bugout proper
   "@typescript-eslint/no-unsafe-assignment": "off"

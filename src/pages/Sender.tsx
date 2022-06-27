@@ -59,7 +59,9 @@ function sendSecret(bugout: Bugout, secret: string) {
     bugout.rpc("shareSecret", { secret }, (result: unknown) => {
         // TODO: if server responds positively (result.success), disconnect
         // TODO: check result.error too?
-        if ((result as { success?: boolean }).success) bugout.destroy();
+        if ((result as { success?: boolean }).success) {
+            bugout.destroy();
+        }
     });
 
     // TODO: toast conditional on result

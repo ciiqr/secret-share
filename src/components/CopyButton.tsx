@@ -23,8 +23,11 @@ async function copyToClipboard(value: string, message: string) {
         textArea.select();
         await new Promise<void>((res, rej) => {
             // here the magic happens
-            if (document.execCommand("copy")) res();
-            else rej(new Error("copyToClipboard exec copy failed"));
+            if (document.execCommand("copy")) {
+                res();
+            } else {
+                rej(new Error("copyToClipboard exec copy failed"));
+            }
             textArea.remove();
         });
     }
