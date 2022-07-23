@@ -1,7 +1,7 @@
 import qrcode from "qrcode.react";
 import styled from "styled-components";
 
-const QrCode = styled(qrcode).attrs((props) => ({
+export const QrCode = styled(qrcode).attrs((props) => ({
     level: props.level ?? "H",
     renderAs: "svg",
 }))({
@@ -9,5 +9,3 @@ const QrCode = styled(qrcode).attrs((props) => ({
     width: "100%",
     height: "100%",
 });
-
-export default QrCode;

@@ -11,7 +11,7 @@ interface CopyableFieldProps {
     message?: string;
 }
 
-export default function CopyableField({ value, message }: CopyableFieldProps) {
+export function CopyableField({ value, message }: CopyableFieldProps) {
     return (
         <Row>
             <ReadOnlyInput value={value} />

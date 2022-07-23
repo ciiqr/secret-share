@@ -1,8 +1,8 @@
 import { Route, Routes } from "react-router-dom";
-import RequesterPage from "pages/Requester";
-import SenderPage from "pages/Sender";
+import { RequesterPage } from "pages/Requester";
+import { SenderPage } from "pages/Sender";
 
-export default function RootPage() {
+export function RootPage() {
     return (
         <Routes>
             <Route path="/" element={<RequesterPage />} />

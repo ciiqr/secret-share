@@ -1,10 +1,10 @@
 import type { PropsWithChildren } from "react";
 import { ThemeProvider } from "styled-components";
-import useColorScheme from "hooks/useColorScheme";
-import getDarkTheme from "theme/getDarkTheme";
-import getLightTheme from "theme/getLightTheme";
+import { useColorScheme } from "hooks/useColorScheme";
+import { getDarkTheme } from "theme/getDarkTheme";
+import { getLightTheme } from "theme/getLightTheme";
 
-export default function Theme({
+export function Theme({
     children,
 }: PropsWithChildren<Record<string, unknown>>) {
     const { colorScheme } = useColorScheme();

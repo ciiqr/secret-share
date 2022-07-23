@@ -1,6 +1,6 @@
 // TODO: move to either tests directory, or in a folder beside App
 // import { render } from '@testing-library/react';
-import App from "components/App";
+import { App } from "components/App";
 
 describe("App", () => {
     it("renders learn react link", () => {

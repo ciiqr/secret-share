@@ -1,9 +1,9 @@
-import Background from "components/Background";
-import ToastContainer from "components/ToastContainer";
-import RootPage from "pages/Root";
-import Theme from "theme/Theme";
+import { Background } from "components/Background";
+import { ToastContainer } from "components/ToastContainer";
+import { RootPage } from "pages/Root";
+import { Theme } from "theme/Theme";
 
-export default function App() {
+export function App() {
     return (
         <Theme>
             <Background>

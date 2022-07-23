@@ -1,7 +1,7 @@
 import merge from "deepmerge";
 import type { DefaultTheme } from "styled-components";
 
-export default function mergeThemes(
+export function mergeThemes(
     baseTheme: DefaultTheme,
     theme: DefaultTheme,
 ): DefaultTheme {

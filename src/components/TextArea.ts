@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const TextArea = styled.textarea((props) => ({
+export const TextArea = styled.textarea((props) => ({
     borderWidth: 1,
     borderStyle: "solid",
     borderRadius: 4,
@@ -20,5 +20,3 @@ const TextArea = styled.textarea((props) => ({
         backgroundColor: props.theme.input?.hover?.backgroundColor,
     },
 }));
-
-export default TextArea;

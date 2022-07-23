@@ -1,8 +1,8 @@
 import type { DefaultTheme } from "styled-components";
-import getBaseTheme from "./getBaseTheme";
-import mergeThemes from "./mergeThemes";
+import { getBaseTheme } from "./getBaseTheme";
+import { mergeThemes } from "./mergeThemes";
 
-export default function getLightTheme(): DefaultTheme {
+export function getLightTheme(): DefaultTheme {
     return mergeThemes(getBaseTheme(), {
         // primaryColor: '',
         backgroundColor: "white",

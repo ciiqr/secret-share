@@ -77,7 +77,7 @@ function useBugoutServer({
 }
 
 // TODO: consider some sort of loading/ready indicator
-export default function RequesterPage() {
+export function RequesterPage() {
     const [secret, setSecret] = useState("");
     const { address } = useBugoutServer({
         onSecretReceived(newSecret) {

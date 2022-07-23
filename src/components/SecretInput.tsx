@@ -1,7 +1,8 @@
 import { useCallback, useState } from "react";
 import styled from "styled-components";
 import { Column, Row, CopyButton, ViewButton } from "components";
-import TextArea from "components/TextArea"; // TODO: why is this sometimes undefined when included through the index...
+// TODO: why is this sometimes undefined when included through the index...
+import { TextArea } from "components/TextArea";
 
 const StyledTextArea = styled(TextArea)({
     height: 200,
@@ -12,7 +13,7 @@ interface SecretInputProps {
     value: string;
 }
 
-export default function SecretInput({ value }: SecretInputProps) {
+export function SecretInput({ value }: SecretInputProps) {
     const [visible, setVisible] = useState(false);
 
     const onClickView = useCallback(() => {

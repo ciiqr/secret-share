@@ -70,7 +70,7 @@ function sendSecret(bugout: Bugout, secret: string) {
 
 // TODO: add a loading indicator for sending
 // TODO: add an indicator for whether we're connected
-export default function SenderPage() {
+export function SenderPage() {
     const { address } = useParams();
     const [secret, setSecret] = useState("");
     const { bugout, ready } = useBugoutClient(address ?? "");

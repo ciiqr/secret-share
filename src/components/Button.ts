@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Button = styled.button((props) => ({
+export const Button = styled.button((props) => ({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
@@ -37,5 +37,3 @@ const Button = styled.button((props) => ({
         filter: "saturate(0)",
     },
 }));
-
-export default Button;

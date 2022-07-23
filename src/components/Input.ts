@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Input = styled.input((props) => ({
+export const Input = styled.input((props) => ({
     borderWidth: 1,
     borderStyle: "solid",
     borderRadius: 4,
@@ -21,5 +21,3 @@ const Input = styled.input((props) => ({
         backgroundColor: props.theme.input?.hover?.backgroundColor,
     },
 }));
-
-export default Input;

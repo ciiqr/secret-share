@@ -6,8 +6,8 @@
     "license": "MIT",
     "scripts": {
         "build": "react-app-rewired build",
-        "lint": "tsc --noEmit && eslint . && prettier --check .",
-        "lint:fix": "eslint --ext js,ts,tsx src --fix && prettier --check --write .",
+        "lint": "check-package-lock && shellcheck-all && tsc --noEmit && eslint . && prettier --loglevel warn --check .",
+        "lint:fix": "eslint --fix . && prettier --loglevel warn --write .",
         "logs": "docker compose logs -f web",
         "start": "docker compose up -d --build --remove-orphans && npm run logs",
         "stop": "docker compose down -v",
@@ -57,12 +57,14 @@
         "url": "0.11.0"
     },
     "devDependencies": {
-        "@pentible/eslint-config": "0.26.0",
-        "@pentible/eslint-config-prettier": "0.26.0",
-        "@pentible/eslint-config-react": "0.26.0",
-        "@pentible/eslint-config-web": "0.26.0",
-        "@pentible/prettier": "0.24.0",
-        "@pentible/tsconfig": "0.24.0",
+        "@pentible/check-package-lock": "0.32.0",
+        "@pentible/eslint-config": "0.32.0",
+        "@pentible/eslint-config-prettier": "0.32.0",
+        "@pentible/eslint-config-react": "0.32.0",
+        "@pentible/eslint-config-web": "0.32.0",
+        "@pentible/prettier": "0.32.0",
+        "@pentible/shellcheck-all": "0.32.0",
+        "@pentible/tsconfig": "0.32.0",
         "node-polyfill-webpack-plugin": "1.1.4",
         "react-app-alias-ex": "2.1.0",
         "react-app-rewired": "2.2.1"

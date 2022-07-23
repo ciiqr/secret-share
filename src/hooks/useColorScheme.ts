@@ -6,7 +6,7 @@ interface Return {
     colorScheme: ColorScheme;
 }
 
-export default function useColorScheme(): Return {
+export function useColorScheme(): Return {
     const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
 
     // TODO: support/persist manual toggle...

@@ -7,7 +7,7 @@ import { Button } from "components";
 async function copyToClipboard(value: string, message: string) {
     // TODO: cleanup code...
     // navigator clipboard api needs a secure context (https)
-    if (navigator.clipboard && window.isSecureContext) {
+    if (window.isSecureContext) {
         // navigator clipboard api method'
         await navigator.clipboard.writeText(value);
     } else {
@@ -41,7 +41,7 @@ interface CopyButtonProps {
     message?: string;
 }
 
-export default function CopyButton({ value, message }: CopyButtonProps) {
+export function CopyButton({ value, message }: CopyButtonProps) {
     const msg = (message ?? "") || "Copied!";
 
     const onClickCopyToClipboard = useCallback(() => {
