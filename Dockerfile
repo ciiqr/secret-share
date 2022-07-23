@@ -5,7 +5,7 @@ WORKDIR /var/app
 # ---------- PRE-REQS ----------
 FROM base as prereq
 
-COPY package*.json ./
+COPY package.json package-lock.json ./
 
 RUN npm set audit false \
     && npm set fund false \
@@ -14,15 +14,14 @@ RUN npm set audit false \
 # NOTE: only required for some projects (the below npm command will fail if this is required)
 RUN apk add --no-cache git
 
-RUN npm ci --quiet --only=production
+RUN npm ci --quiet --omit=dev
 
 # ---------- DEVELOPMENT ----------
 FROM prereq as development
 
-COPY tsconfig.json ./
-COPY config-overrides.js ./
+COPY tsconfig.json config-overrides.js ./
 
-RUN npm install --quiet
+RUN npm ci --quiet
 
 # ie. /secret
 ARG PUBLIC_URL='/'
@@ -31,7 +30,7 @@ ENV WDS_SOCKET_PATH="$PUBLIC_URL"
 
 ENV PORT=80
 
-CMD ["npm", "run", "debug"]
+CMD ["npx", "react-app-rewired","start"]
 
 EXPOSE 80
 

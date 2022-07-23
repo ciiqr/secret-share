@@ -9,5 +9,5 @@ computer without access to your password manager
 
 ```
 npm i
-npm run dev:debug
+npm start
 ```
