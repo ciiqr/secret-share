@@ -10,6 +10,21 @@ rules:
   "@typescript-eslint/no-unsafe-call": "off"
   "@typescript-eslint/no-unsafe-member-access": "off"
   "@typescript-eslint/no-unsafe-return": "off"
+  # TODO: shouldn't be required here
+  "import/no-unassigned-import":
+    [
+      "error",
+      {
+        allow:
+          [
+            "**/*.css",
+            "ghspa",
+            "@fontsource/**",
+            "@testing-library/jest-dom",
+            "@testing-library/jest-dom/**",
+          ],
+      },
+    ]
 
 overrides:
   - files:
@@ -45,3 +60,8 @@ overrides:
     rules:
       "@typescript-eslint/no-explicit-any": "off"
       "@typescript-eslint/naming-convention": "off"
+  # TODO: shouldn't be required here...
+  - files:
+      - "*.d.ts"
+    rules:
+      "import/no-unassigned-import": "off"
