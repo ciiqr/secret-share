@@ -2,6 +2,7 @@
 /build
 tsconfig.tsbuildinfo
 /.direnv/
+.vscode/settings.json
 
 # misc
 .DS_Store

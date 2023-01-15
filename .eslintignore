@@ -2,4 +2,5 @@
 /build
 tsconfig.tsbuildinfo
 /.direnv/
+.vscode/settings.json
 config-overrides.js

@@ -4,7 +4,7 @@ import "react-hot-toast";
 // import { CSSProperties } from 'react';
 
 declare module "styled-components" {
-    export interface DefaultTheme {
+    interface DefaultTheme {
         spacing?: {
             default?: number | string;
         };
