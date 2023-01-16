@@ -3,10 +3,10 @@ import { Toaster } from "react-hot-toast";
 import { ThemeContext } from "styled-components";
 
 export function ToastContainer() {
-    const theme = useContext(ThemeContext);
+    const { toast } = useContext(ThemeContext);
 
     return (
         // TODO: some options I may want to set outside of the theme
-        <Toaster toastOptions={theme.toast} />
+        <Toaster toastOptions={toast} />
     );
 }

@@ -1,7 +1,7 @@
 import "styled-components";
 import "react-hot-toast";
 // TODO: figure out stricter typing...
-// import { CSSProperties } from 'react';
+// import { CSSProperties } from "react";
 
 declare module "styled-components" {
     interface DefaultTheme {
