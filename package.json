@@ -57,14 +57,14 @@
         "url": "0.11.0"
     },
     "devDependencies": {
-        "@pentible/check-package-lock": "0.53.0",
-        "@pentible/eslint-config": "0.53.0",
-        "@pentible/eslint-config-prettier": "0.53.0",
-        "@pentible/eslint-config-react": "0.53.0",
-        "@pentible/eslint-config-web": "0.53.0",
-        "@pentible/prettier": "0.53.0",
-        "@pentible/shellcheck-all": "0.53.0",
-        "@pentible/tsconfig": "0.53.0",
+        "@pentible/check-package-lock": "0.54.0",
+        "@pentible/eslint-config": "0.54.0",
+        "@pentible/eslint-config-prettier": "0.54.0",
+        "@pentible/eslint-config-react": "0.54.0",
+        "@pentible/eslint-config-web": "0.54.0",
+        "@pentible/prettier": "0.54.0",
+        "@pentible/shellcheck-all": "0.54.0",
+        "@pentible/tsconfig": "0.54.0",
         "node-polyfill-webpack-plugin": "2.0.1",
         "react-app-alias-ex": "2.1.0",
         "react-app-rewired": "2.2.1"
